@@ -41,8 +41,8 @@
 
 <template>
   <div class="box-order d-flex flex-column py-4 ps-3 pe-4 bg-white">
-    <div class="box-order-header d-flex justify-content-between align-items-center pb-3" @click="toogleTemplateSeatMap">
-      <div class="d-flex gap-5 align-items-center">
+    <div class="d-flex justify-content-between align-items-center pb-3">
+      <div class="pointer d-flex gap-5 align-items-center" @click="toogleTemplateSeatMap">
         <div class="logo-company">
           <img :src="`../../../../src/assets/img/companies/${props.order.company.icon}`" :alt="`${ props.order.company.name }`" class="company-logo"/>
         </div>
@@ -71,13 +71,13 @@
         <div class="seat-class">{{ props.order.seatClass }}</div>
 
         <div class="d-flex gap-3 align-items-center">
-          <div class="price-ticket d-flex flex-column align-items-end">
+          <div class="pointer price-ticket d-flex flex-column align-items-end" @click="toogleTemplateSeatMap">
             <span class="price">{{ priceFormatted() }}</span>
             <span class="info-gray">por pessoa</span>
           </div>
           <div>
-            <button class="button button-choose" type="button" v-if="!showSeatMap" @click="toogleTemplateSeatMap">Escolher ida</button>
-            <button class="button button-close" type="button" v-if="showSeatMap" @click="toogleTemplateSeatMap">Fechar</button>
+            <button class="pointer button button-choose" type="button" v-if="!showSeatMap" @click="toogleTemplateSeatMap">Escolher ida</button>
+            <button class="pointer button button-close" type="button" v-if="showSeatMap" @click="toogleTemplateSeatMap">Fechar</button>
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@
     border: 1px solid #d5d8de;
   }
 
-  .box-order-header {
+  .pointer {
     cursor: pointer;
   }
 

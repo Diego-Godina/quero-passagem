@@ -21,7 +21,10 @@ const todayFormatted = computed(() => {
 onMounted(() => {
   bulmaCalendar.attach(`#${props.id}`, {
     minDate: todayFormatted.value,
-    color: 'black'
+    color: 'black',
+    dateFormat: 'dd/MM/yyyy',
+    displayFormat: 'dd/MM/yyyy',
+    lang: 'pt-BR',
   });
 });
 </script>

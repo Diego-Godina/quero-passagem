@@ -2,7 +2,8 @@
 
 namespace App\Enums;
 
-enum SeatType
+enum SeatType: string
 {
-
+    case SEAT = 'seat';
+    case EMPTY = 'emptyOrReservedSpace';
 }

@@ -2,7 +2,8 @@
 
 namespace App\Enums;
 
-enum SeatsOrientation
+enum SeatsOrientation: string
 {
-
+    case VERTICAL = 'vertical';
+    case HORIZONTAL = 'horizontal';
 }

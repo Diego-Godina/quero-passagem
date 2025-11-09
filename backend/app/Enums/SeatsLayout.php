@@ -2,7 +2,8 @@
 
 namespace App\Enums;
 
-enum SeatsLayout
+enum SeatsLayout: string
 {
-
+    case NUMBERED = 'numbered';
+    case QUANTITY = 'quantity';
 }

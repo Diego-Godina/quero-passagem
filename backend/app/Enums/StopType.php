@@ -2,7 +2,8 @@
 
 namespace App\Enums;
 
-enum StopType
+enum StopType: string
 {
-
+    case STATION = 'station';
+    case CITY = 'city';
 }

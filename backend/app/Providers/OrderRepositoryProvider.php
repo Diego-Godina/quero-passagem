@@ -3,12 +3,12 @@
 namespace App\Providers;
 
 use App\Http\Traits\HandleExternalRequests;
-use App\Interfaces\SeatsInterface;
-use App\Repositories\ApiSeatsRepository;
+use App\Interfaces\OrderInterface;
+use App\Repositories\ApiOrderRepository;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
-class SeatsRepositoryProvider extends ServiceProvider
+class OrderRepositoryProvider extends ServiceProvider
 {
     use HandleExternalRequests;
 
@@ -18,6 +18,6 @@ class SeatsRepositoryProvider extends ServiceProvider
             return $this->apiClient();
         });
 
-        $this->app->bind(SeatsInterface::class, ApiSeatsRepository::class);
+        $this->app->bind(OrderInterface::class, ApiOrderRepository::class);
     }
 }

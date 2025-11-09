@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import InputSearchDestinies from '@/components/layouts/search/InputSearchDestinies.vue'
-  import SelectDates from '@/components/layouts/search/SelectDates.vue'
   import { useRouter } from 'vue-router'
   import SelectDate from '@/components/layouts/search/SelectDate.vue'
 

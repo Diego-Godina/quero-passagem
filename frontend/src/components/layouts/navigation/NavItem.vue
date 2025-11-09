@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import type INavItem from '@/interfaces/INavItem.ts'
-  import { useRoute } from 'vue-router'
 
   const props = defineProps<{
     navItem: INavItem

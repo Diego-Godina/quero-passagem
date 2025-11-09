@@ -1,59 +1,171 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Quero Passagem API (Back-end Laravel)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este repositório contém o **back-end** da aplicação **Quero Passagem**, desenvolvido com o **framework Laravel 12**, servindo como **API RESTful** para o front-end em Vue 3.  
+O objetivo é prover alguns endpoints seguros, performáticos e escaláveis que alimentam o SPA responsável pela interface do usuário.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Tecnologias e Dependências
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+O projeto utiliza o ecossistema Laravel mais recente, com autenticação básica para rotas que não necessitam de login e suporte para desenvolvimento moderno.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### **Dependências Principais**
+- **PHP 8.2+** — Linguagem principal do projeto.
+- **Laravel 12** — Framework robusto para construção de APIs e aplicações web modernas.
+- **Laravel Tinker** — Console interativo REPL para manipulação e testes rápidos de código.
 
-## Learning Laravel
+### **Dependências de Desenvolvimento**
+- **FakerPHP** — Geração de dados falsos para testes e seeders.
+- **Laravel Pail** — Ferramenta de log e monitoramento de eventos em tempo real.
+- **Laravel Pint** — Formatador e padronizador de código PHP.
+- **Laravel Sail** — Ambiente de desenvolvimento com Docker pronto para Laravel.
+- **Mockery** — Mocking framework para testes automatizados.
+- **Nunomaduro Collision** — Exibição elegante de erros no terminal.
+- **PHPUnit** — Framework oficial de testes unitários do PHP.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🧩 Estrutura e Arquitetura
 
-## Laravel Sponsors
+O projeto segue o padrão MVC (Model–View–Controller) do Laravel, adaptado para servir exclusivamente como **API**:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```
+app/
+ ├─ Enums/             # Utilizado para tipagem aprimorada
+ ├─ Http/
+ │   ├─ Controllers/   # Controladores da API
+ │   ├─ Middleware/    # Filtros e autenticação de requisições
+ │   ├─ Requests/      # Validações de entrada
+ │   └─ Traits/        # Para reuso de métodos
+ ├─ Interfaces/        # Para facilitar troca de fonte de dados no futuro
+ ├─ Models/            # Modelos Eloquent (representação do banco)
+ ├─ Providers/         # Provedores de serviços do Laravel
+ ├─ Repositories/      # Onde contém a lógica de busca de dados
+ └─ Services/          # Para conter regras de negócio na busca de dados das APIs externas
+     └─ Validations/   # Contém as validações dos dados de retorno da API externa
 
-### Premium Partners
+routes/
+ ├─ api.php            # Rotas da API RESTful
+ └─ web.php            # Rotas web (geralmente desativadas nesta API)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+database/
+ ├─ migrations/        # Estrutura das tabelas
+ ├─ seeders/           # Dados iniciais
+ └─ factories/         # Geração de dados fake
+```
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## ⚙️ Configuração do Ambiente
 
-## Code of Conduct
+### **Pré-requisitos**
+- **PHP 8.2+**
+- **Composer 2.7+**
+- **MySQL / MariaDB / SQLite**
+- (Opcional) **Docker** com **Laravel Sail**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### **Instalação**
 
-## Security Vulnerabilities
+```bash
+git clone <URL_DO_REPOSITORIO>
+cd quero-passagem-api
+composer install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### **Configuração do ambiente (.env)**
 
-## License
+Crie o arquivo `.env` com base no exemplo fornecido:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+cp .env.example .env
+```
+
+Gere a chave da aplicação:
+
+```bash
+php artisan key:generate
+```
+
+Configure as variáveis de banco de dados no `.env`, por exemplo:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=quero_passagem
+DB_USERNAME=root
+DB_PASSWORD=secret
+```
+
+### **Rodar as migrações e seeds**
+
+```bash
+php artisan migrate --seed
+```
+
+---
+
+## 🧪 Desenvolvimento e Execução
+
+### **Servidor local**
+
+```bash
+php artisan serve
+```
+
+A API ficará disponível (por padrão) em `http://localhost:8000`.
+
+### **Ambiente Docker (Laravel Sail)**
+
+Se preferir rodar com Docker:
+
+```bash
+./vendor/bin/sail up -d
+```
+
+Depois acesse `http://localhost`.
+
+---
+
+## 🧠 Scripts Úteis
+
+### **Configuração inicial completa**
+```bash
+composer run setup
+```
+
+### **Modo de desenvolvimento integrado**
+Executa servidor, fila, logs e Vite simultaneamente:
+```bash
+composer run dev
+```
+
+### **Rodar testes**
+```bash
+composer run test
+```
+
+---
+
+## 🌍 Implantação em outro ambiente
+
+1. **Copie o projeto** para o servidor desejado.
+2. **Instale as dependências PHP:**
+   ```bash
+   composer install --optimize-autoloader --no-dev
+   ```
+3. **Configure o .env** com as credenciais corretas.
+4. **Execute as migrações:**
+   ```bash
+   php artisan migrate --force
+   ```
+5. **Ative o cache de configuração e rotas:**
+   ```bash
+   php artisan config:cache
+   php artisan route:cache
+   ```
+6. **Inicie o servidor (ou configure com Nginx/Apache).**
+
+---
+
+© 2025 — Desenvolvido com ❤️ e Laravel.

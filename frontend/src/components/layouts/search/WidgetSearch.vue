@@ -3,6 +3,7 @@
   import InputSearchDestinies from '@/components/layouts/search/InputSearchDestinies.vue'
   import SelectDates from '@/components/layouts/search/SelectDates.vue'
   import { useRouter } from 'vue-router'
+  import BoxContent from '@/components/layouts/BoxContent.vue'
 
   const props = defineProps<{
     title: string,
@@ -17,17 +18,19 @@
 </script>
 
 <template>
-  <form @submit.prevent="searchBusTickets">
-    <div class="widget-search">
-      <h1 class="title-widget-search">{{ props.title }}</h1>
+  <BoxContent>
+    <form @submit.prevent="searchBusTickets">
+      <div class="widget-search">
+        <h1 class="title-widget-search">{{ props.title }}</h1>
 
-      <InputSearchDestinies id="search_origin" icon="icon_circle-desativado.svg" placeholder="Partindo de"/>
-      <InputSearchDestinies id="search_destiny" icon="icon_pin_outline-desativado.svg" placeholder="Indo para"/>
+        <InputSearchDestinies id="search_origin" icon="icon_circle-desativado.svg" placeholder="Partindo de"/>
+        <InputSearchDestinies id="search_destiny" icon="icon_pin_outline-desativado.svg" placeholder="Indo para"/>
 
-      <SelectDates/>
-      <button type="submit" class="button-widget-search">{{ buttonText }}</button>
-    </div>
-  </form>
+        <SelectDates/>
+        <button type="submit" class="button-widget-search">{{ buttonText }}</button>
+      </div>
+    </form>
+  </BoxContent>
 </template>
 
 <style scoped>

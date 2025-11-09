@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { computed } from 'vue'
   import type ITopDestinies from '@/interfaces/ITopDestinies.ts'
+  import BoxContent from '@/components/layouts/BoxContent.vue'
 
   const topDestinies = computed<ITopDestinies[]>(() => {
     return [
@@ -96,35 +97,40 @@
 </script>
 
 <template>
-  <section class="box-top-destinies d-flex justify-content-between">
-    <div
-      v-for="topDestiny in topDestinies"
-      :key="topDestiny.title"
-      class="d-flex flex-column gap-3"
-    >
-      <div class="title-top-destiny">{{ topDestiny.title }}</div>
-      <div class="d-flex flex-column gap-2">
+  <section class="box-top-destinies">
+    <BoxContent>
+      <div class="d-flex justify-content-between">
         <div
-          v-for="(option, index) in topDestiny.options"
-          :key="option.name"
-          :class="{ 'is-last': index === topDestiny.options.length - 1 }"
+          v-for="topDestiny in topDestinies"
+          :key="topDestiny.title"
+          class="d-flex flex-column gap-3"
         >
-          <RouterLink
-            class="link-top-destiny"
-            :to="option.link"
-          >
-            {{ option.name }}
-          </RouterLink>
+          <div class="title-top-destiny">{{ topDestiny.title }}</div>
+          <div class="d-flex flex-column gap-2">
+            <div
+              v-for="(option, index) in topDestiny.options"
+              :key="option.name"
+              :class="{ 'is-last': index === topDestiny.options.length - 1 }"
+            >
+              <RouterLink
+                class="link-top-destiny"
+                :to="option.link"
+              >
+                {{ option.name }}
+              </RouterLink>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </BoxContent>
   </section>
 </template>
 
 <style scoped>
   .box-top-destinies {
     background-color: #0d2240;
-    padding: 48px 40px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   .is-last {

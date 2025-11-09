@@ -3,6 +3,7 @@
 import OptionSubHeader from '@/components/bus/OptionSubHeader.vue'
 import { computed } from 'vue'
 import type IOptionsSubHeaderBusTickets from '@/interfaces/IOptionsSubHeaderBusTickets.ts'
+import BoxContent from '@/components/layouts/BoxContent.vue'
 
 const optionsSubHeaderBusTickets = computed<IOptionsSubHeaderBusTickets[]>(() => {
   return [
@@ -27,18 +28,23 @@ const optionsSubHeaderBusTickets = computed<IOptionsSubHeaderBusTickets[]>(() =>
 </script>
 
 <template>
-  <section class="sub-header d-flex justify-content-between">
-    <OptionSubHeader
-      v-for="option in optionsSubHeaderBusTickets"
-      :key="option.title"
-      :option="option"
-    />
+  <section class="sub-header">
+    <BoxContent>
+      <div class="d-flex justify-content-between">
+        <OptionSubHeader
+          v-for="option in optionsSubHeaderBusTickets"
+          :key="option.title"
+          :option="option"
+        />
+      </div>
+    </BoxContent>
   </section>
 </template>
 
 <style scoped>
   .sub-header {
-    padding: 8px 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     background: #F5F5F7;
   }
 </style>

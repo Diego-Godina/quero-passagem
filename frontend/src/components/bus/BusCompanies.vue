@@ -2,6 +2,7 @@
   import { computed } from 'vue'
   import type IBusCompany from '@/interfaces/IBusCompany.ts'
   import CompanyCard from '@/components/companies/CompanyCard.vue'
+  import BoxContent from '@/components/layouts/BoxContent.vue'
 
   const companies = computed<IBusCompany[]>(() => {
     return [
@@ -60,22 +61,24 @@
 </script>
 
 <template>
-  <section class="bus-companies d-flex flex-column">
-    <h2 class="h2-title">Passagens de Ônibus Baratas: Viações de Ônibus</h2>
-    <span class="sub-title">A passagem de ônibus na viação de sua preferência</span>
+  <BoxContent>
+    <section class="bus-companies d-flex flex-column">
+      <h2 class="h2-title">Passagens de Ônibus Baratas: Viações de Ônibus</h2>
+      <span class="sub-title">A passagem de ônibus na viação de sua preferência</span>
 
-    <div class="companies d-flex gap-5 mt-5">
-      <CompanyCard
-        v-for="company in companies"
-        :key="company.name"
-        :company="company"
-      />
-    </div>
+      <div class="companies d-flex gap-5 mt-5">
+        <CompanyCard
+          v-for="company in companies"
+          :key="company.name"
+          :company="company"
+        />
+      </div>
 
-    <RouterLink to="/auto-viacoes" class="link show-more-companies mt-6">
-      Mostre-me todas as viações
-    </RouterLink>
-  </section>
+      <RouterLink to="/auto-viacoes" class="link show-more-companies mt-6">
+        Mostre-me todas as viações
+      </RouterLink>
+    </section>
+  </BoxContent>
 </template>
 
 <style scoped>
@@ -95,7 +98,8 @@
   }
 
   .bus-companies {
-    padding: 24px 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   .h2-title {

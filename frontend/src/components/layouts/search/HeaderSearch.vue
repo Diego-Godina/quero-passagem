@@ -16,6 +16,5 @@ import WidgetSearch from '@/components/layouts/search/WidgetSearch.vue'
     background-position: center center;
     background-repeat: no-repeat;
     height: 310px;
-    padding: 0 40px;
   }
 </style>

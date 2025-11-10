@@ -1,0 +1,1 @@
+export const DEFINE_STOPS = 'DEFINE_STOPS'

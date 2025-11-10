@@ -50,7 +50,7 @@ class StopValidator
             'latitude' => ['required', 'string'],
             'longitude' => ['required', 'string'],
             'address' => ['string'],
-            'zipcode' => ['string'],
+            'zipcode' => ['nullable', 'string'],
             'type' => ['required', new Enum(StopType::class)],
             'images' => ['nullable', 'array'],
         ]);

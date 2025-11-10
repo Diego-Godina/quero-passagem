@@ -1,9 +1,10 @@
 <script setup lang="ts">
-
+  import NotificationMessage from '@/components/layouts/NotificationMessage.vue'
 </script>
 
 <template>
   <main>
+    <NotificationMessage/>
     <router-view></router-view>
   </main>
 </template>

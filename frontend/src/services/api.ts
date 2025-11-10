@@ -5,7 +5,7 @@ const api = axios.create({
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    // 'Authorization': 'Basic ZGllZ29fc2FudG9zOnEySyhRTzdpOA=='
+    // 'Authorization': 'Basic '
   }
 })
 

@@ -1,1 +1,3 @@
 export const DEFINE_STOPS = 'DEFINE_STOPS'
+export const DEFINE_STOP_DETAILS = 'DEFINE_STOP_DETAILS'
+export const NOTIFY = 'NOTIFY'

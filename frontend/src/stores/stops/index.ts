@@ -3,15 +3,19 @@ import { GET_STOP_DETAILS, GET_STOPS } from '@/stores/actions'
 import IStop from '@/interfaces/IStop'
 import { getStopDetails, getStops } from '@/services/stops'
 import IStopDetails from '@/interfaces/IStopDetails'
-import { NotificationType } from '@/interfaces/INotification'
-
 
 export interface StateStops {
   stops: IStop[],
   stopDetails: IStopDetails
 }
 
-export const stop: Module<StateStops, State> = {
+export const stop: Module<StateStops, Any> = {
+  state: (): StateStops => ({
+    stop: {
+      stops: []
+    }
+  }),
+
   mutations: {
     [DEFINE_STOPS](state, stops: IStop[]) {
       state.stops = stops

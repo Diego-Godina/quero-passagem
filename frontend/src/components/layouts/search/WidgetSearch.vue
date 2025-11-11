@@ -1,32 +1,22 @@
 <script setup lang="ts">
-
   import InputSearchDestinies from '@/components/layouts/search/InputSearchDestinies.vue'
   import SelectDates from '@/components/layouts/search/SelectDates.vue'
   import { useRouter } from 'vue-router'
   import BoxContent from '@/components/layouts/BoxContent.vue'
   import { useSearchForm } from '@/composables/useSearchForm'
 
-  const { form, switchDestinies, isValid, submitData } = useSearchForm()
+  const { form, switchDestinies, isValid, submitSearch } = useSearchForm()
   const router = useRouter()
 
   const props = defineProps<{
     title: string,
     buttonText: string
   }>()
-
-  const searchBusTickets = () => {
-    if (!isValid.value) {
-      console.warn('Formulário inválido')
-    }
-
-    console.log({ form })
-    // router.push({name: 'list-bus-tickets'})
-  }
 </script>
 
 <template>
   <BoxContent>
-    <form @submit.prevent="searchBusTickets">
+    <form @submit.prevent="submitSearch()">
       <div class="widget-search">
         <h1 class="title-widget-search">{{ props.title }}</h1>
 

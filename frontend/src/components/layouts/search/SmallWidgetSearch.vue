@@ -1,33 +1,50 @@
 <script setup lang="ts">
   import InputSearchDestinies from '@/components/layouts/search/InputSearchDestinies.vue'
-  import { useRouter } from 'vue-router'
   import SelectDate from '@/components/layouts/search/SelectDate.vue'
+  import { useSearchForm } from '@/composables/useSearchForm'
+  const { form, switchDestinies, submitSearch } = useSearchForm()
 
-  const router = useRouter()
 
-  const searchBusTickets = () => {
-    router.push({name: 'list-tickets'})
-  }
 </script>
 
 <template>
-  <form @submit.prevent="searchBusTickets">
+  <form @submit.prevent="submitSearch">
     <div class="widget-search d-flex justify-content-between is-horizontal">
       <div class="d-flex gap-3 justify-content-between">
-        <InputSearchDestinies id="search_origin" icon="icon_circle-desativado.svg" placeholder="Partindo de"/>
+        <InputSearchDestinies
+          id="search_origin"
+          icon="icon_circle-desativado.svg"
+          placeholder="Partindo de"
+          v-model:searchValue="form.origin.name"
+          @update:id="form.origin.id = $event"
+        />
 
-        <div class="exchange"></div>
+        <div class="exchange" @click="switchDestinies()"></div>
 
-        <InputSearchDestinies id="search_destiny" icon="icon_pin_outline-desativado.svg" placeholder="Indo para"/>
+        <InputSearchDestinies
+          id="search_destiny"
+          icon="icon_pin_outline-desativado.svg"
+          placeholder="Indo para"
+          v-model:searchValue="form.destiny.name"
+          @update:id="form.destiny.id = $event"
+        />
       </div>
 
       <div class="d-flex gap-3 justify-content-between">
         <div>
-          <SelectDate id="dt-go" label="Data Saída"/>
+          <SelectDate
+            id="dt-go"
+            label="Data Saída"
+            v-model:date="form.dates.start"
+          />
         </div>
 
         <div>
-          <SelectDate id="dt-back" label="Data Retorno"/>
+          <SelectDate
+            id="dt-back"
+            label="Data Retorno"
+            v-model:date="form.dates.end"
+          />
         </div>
       </div>
 

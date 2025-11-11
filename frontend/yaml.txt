@@ -1,791 +1,134 @@
-[
-          {
-            seat: '03',
-            position: {
-              x: 0,
-              y: 4,
-              z: 0,
-            },
-            occupied: true,
-            type: 'seat',
-          },
-          {
-            seat: null,
-            position: {
-              x: 1,
-              y: 0,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 2,
-              y: 0,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: '11',
-            position: {
-              x: 3,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '15',
-            position: {
-              x: 4,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '19',
-            position: {
-              x: 5,
-              y: 4,
-              z: 0,
-            },
-            occupied: true,
-            type: 'seat',
-          },
-          {
-            seat: '23',
-            position: {
-              x: 6,
-              y: 4,
-              z: 0,
-            },
-            occupied: true,
-            type: 'seat',
-          },
-          {
-            seat: '27',
-            position: {
-              x: 7,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '31',
-            position: {
-              x: 8,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '35',
-            position: {
-              x: 9,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '40',
-            position: {
-              x: 10,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '43',
-            position: {
-              x: 11,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '47',
-            position: {
-              x: 14,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '51',
-            position: {
-              x: 15,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '55',
-            position: {
-              x: 16,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '59',
-            position: {
-              x: 17,
-              y: 4,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-        ],
-        [
-          {
-            seat: '04',
-            position: {
-              x: 0,
-              y: 3,
-              z: 0,
-            },
-            occupied: true,
-            type: 'seat',
-          },
-          {
-            seat: null,
-            position: {
-              x: 1,
-              y: 1,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 2,
-              y: 1,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: '12',
-            position: {
-              x: 3,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '16',
-            position: {
-              x: 4,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '20',
-            position: {
-              x: 5,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '24',
-            position: {
-              x: 6,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '28',
-            position: {
-              x: 7,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '32',
-            position: {
-              x: 8,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '36',
-            position: {
-              x: 9,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '39',
-            position: {
-              x: 10,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '44',
-            position: {
-              x: 11,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '48',
-            position: {
-              x: 14,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '52',
-            position: {
-              x: 15,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '56',
-            position: {
-              x: 16,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '60',
-            position: {
-              x: 17,
-              y: 3,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-        ],
-        [
-          {
-            seat: null,
-            position: {
-              x: 0,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 1,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 2,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 3,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 4,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 5,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 6,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 7,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 8,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 9,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 10,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 11,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 14,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 15,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 16,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-          {
-            seat: null,
-            position: {
-              x: 17,
-              y: 2,
-              z: 0,
-            },
-            type: 'emptyOrReservedSpace',
-          },
-        ],
-        [
-          {
-            seat: '02',
-            position: {
-              x: 0,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '06',
-            position: {
-              x: 1,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '08',
-            position: {
-              x: 2,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '10',
-            position: {
-              x: 3,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '14',
-            position: {
-              x: 4,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '18',
-            position: {
-              x: 5,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '22',
-            position: {
-              x: 6,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '26',
-            position: {
-              x: 7,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '30',
-            position: {
-              x: 8,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '34',
-            position: {
-              x: 9,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '38',
-            position: {
-              x: 10,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '42',
-            position: {
-              x: 11,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '46',
-            position: {
-              x: 14,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '50',
-            position: {
-              x: 15,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '54',
-            position: {
-              x: 16,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '58',
-            position: {
-              x: 17,
-              y: 1,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-        ],
-        [
-          {
-            seat: '01',
-            position: {
-              x: 0,
-              y: 0,
-              z: 0,
-            },
-            occupied: true,
-            type: 'seat',
-          },
-          {
-            seat: '05',
-            position: {
-              x: 1,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '07',
-            position: {
-              x: 2,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '09',
-            position: {
-              x: 3,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '13',
-            position: {
-              x: 4,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '17',
-            position: {
-              x: 5,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '21',
-            position: {
-              x: 6,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '25',
-            position: {
-              x: 7,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '29',
-            position: {
-              x: 8,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '33',
-            position: {
-              x: 9,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '37',
-            position: {
-              x: 10,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '41',
-            position: {
-              x: 11,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '45',
-            position: {
-              x: 14,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '49',
-            position: {
-              x: 15,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '53',
-            position: {
-              x: 16,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-          {
-            seat: '57',
-            position: {
-              x: 17,
-              y: 0,
-              z: 0,
-            },
-            occupied: false,
-            type: 'seat',
-          },
-        ],
-      ],
+    // return [
+    //   {
+    //     'id': '1_1ebb8120607b600a436a7488f2853922',
+    //     'company': {
+    //       'id': '12',
+    //       'name': 'Garcia',
+    //       'icon': 'viacao-cometa.svg'
+    //     },
+    //     'from': {
+    //       'id': 'ROD_3',
+    //       'name': 'Campinas, SP - Terminal Ramos de Azevedo'
+    //     },
+    //     'to': {
+    //       'id': 'ROD_3',
+    //       'name': 'Campinas, SP - Terminal Ramos de Azevedo'
+    //     },
+    //     'availableSeats': 0,
+    //     'seatsLayout': 'numbered',
+    //     'withBPE': false,
+    //     'departure': {
+    //       'date': '2025-08-26',
+    //       'time': '19:00:00'
+    //     },
+    //     'arrival': {
+    //       'date': '2025-08-26',
+    //       'time': '19:00:00'
+    //     },
+    //     'travelDuration': 27000,
+    //     'travelDistance': '487.501',
+    //     'seatClass': 'LEITO CAMA',
+    //     'price': {
+    //       'seatPrice': 18.67,
+    //       'taxPrice': 3.73,
+    //       'price': 22.4,
+    //       'ccTaxPrice': 2.02
+    //     },
+    //     'insurance': 18,
+    //     'allowCanceling': true,
+    //     'travelCancellationLimitDate': '2025-08-20 19:30:00',
+    //     'travelCancellationFee': 0,
+    //     'manualConfirmation': false,
+    //     'CPFRequired': false,
+    //     'loungeVipAvailable': false,
+    //     'maximumAllowedPassengers': null,
+    //     'connection': {
+    //       'node': {
+    //         'id': 'ROD_3',
+    //         'name': 'Campinas, SP - Terminal Ramos de Azevedo'
+    //       },
+    //       'waitingInformation': {
+    //         'arrival': '2025-08-21 07:00:00',
+    //         'departure': {
+    //           'date': '2025-08-26',
+    //           'time': '19:00:00'
+    //         }
+    //       },
+    //       'company': {
+    //         'id': '12',
+    //         'name': 'Garcia',
+    //         'icon': 'viacao-cometa.svg'
+    //       },
+    //       'seatClass': 'CONVENCIONAL',
+    //       'availableSeats': 44,
+    //       'seatsLayout': 'numbered',
+    //       'withBPE': false,
+    //       'loungeVipAvailable': false
+    //     }
+    //   },
+    //   {
+    //     'id': '1_1ebb8120607b600a436a7488f28539sfdfd2',
+    //     'company': {
+    //       'id': '12',
+    //       'name': 'Garcia'
+    //     },
+    //     'from': {
+    //       'id': 'ROD_3',
+    //       'name': 'Campinas, SP - Terminal Ramos de Azevedo'
+    //     },
+    //     'to': {
+    //       'id': 'ROD_3',
+    //       'name': 'Campinas, SP - Terminal Ramos de Azevedo'
+    //     },
+    //     'availableSeats': 0,
+    //     'seatsLayout': 'numbered',
+    //     'withBPE': false,
+    //     'departure': {
+    //       'date': '2025-08-26',
+    //       'time': '19:00:00'
+    //     },
+    //     'arrival': {
+    //       'date': '2025-08-26',
+    //       'time': '19:00:00'
+    //     },
+    //     'travelDuration': 27000,
+    //     'travelDistance': '487.501',
+    //     'seatClass': 'LEITO CAMA',
+    //     'price': {
+    //       'seatPrice': 18.67,
+    //       'taxPrice': 3.73,
+    //       'price': 22.4,
+    //       'ccTaxPrice': 2.02
+    //     },
+    //     'insurance': 18,
+    //     'allowCanceling': true,
+    //     'travelCancellationLimitDate': '2025-08-20 19:30:00',
+    //     'travelCancellationFee': 0,
+    //     'manualConfirmation': false,
+    //     'CPFRequired': false,
+    //     'loungeVipAvailable': false,
+    //     'maximumAllowedPassengers': null,
+    //     'connection': {
+    //       'node': {
+    //         'id': 'ROD_3',
+    //         'name': 'Campinas, SP - Terminal Ramos de Azevedo'
+    //       },
+    //       'waitingInformation': {
+    //         'arrival': '2025-08-21 07:00:00',
+    //         'departure': {
+    //           'date': '2025-08-26',
+    //           'time': '19:00:00'
+    //         }
+    //       },
+    //       'company': {
+    //         'id': '12',
+    //         'name': 'Garcia'
+    //       },
+    //       'seatClass': 'CONVENCIONAL',
+    //       'availableSeats': 44,
+    //       'seatsLayout': 'numbered',
+    //       'withBPE': false,
+    //       'loungeVipAvailable': false
+    //     }
+    //   }
+    // ]

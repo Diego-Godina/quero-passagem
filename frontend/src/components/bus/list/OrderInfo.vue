@@ -9,7 +9,7 @@
     order: IOrder,
   }>()
 
-  const showSeatMap = ref(true)
+  const showSeatMap = ref(false)
 
   const calcDuration = (): string => {
     const duration = props.order.travelDuration
@@ -25,8 +25,13 @@
   }
 
   const priceFormatted = (): string => {
-    const price = (props.order.price.seatPrice + props.order.price.taxPrice + props.order.price.price + props.order.price.ccTaxPrice)
-      .toLocaleString('pt-BR', {
+    const p = props.order.price
+    const price = (
+      (p?.seatPrice ?? 0) +
+      (p?.taxPrice ?? 0) +
+      (p?.price ?? 0) +
+      (p?.ccTaxPrice ?? 0)
+    ).toLocaleString('pt-BR', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     })

@@ -4,16 +4,23 @@
   import SelectDates from '@/components/layouts/search/SelectDates.vue'
   import { useRouter } from 'vue-router'
   import BoxContent from '@/components/layouts/BoxContent.vue'
+  import { useSearchForm } from '@/composables/useSearchForm'
+
+  const { form, switchDestinies, isValid, submitData } = useSearchForm()
+  const router = useRouter()
 
   const props = defineProps<{
     title: string,
     buttonText: string
   }>()
 
-  const router = useRouter()
-
   const searchBusTickets = () => {
-    router.push({name: 'list-bus-tickets'})
+    if (!isValid.value) {
+      console.warn('Formulário inválido')
+    }
+
+    console.log({ form })
+    // router.push({name: 'list-bus-tickets'})
   }
 </script>
 
@@ -23,11 +30,36 @@
       <div class="widget-search">
         <h1 class="title-widget-search">{{ props.title }}</h1>
 
-        <InputSearchDestinies id="search_origin" icon="icon_circle-desativado.svg" placeholder="Partindo de"/>
-        <InputSearchDestinies id="search_destiny" icon="icon_pin_outline-desativado.svg" placeholder="Indo para"/>
+        <InputSearchDestinies
+          id="search_origin"
+          icon="icon_circle-desativado.svg"
+          placeholder="Partindo de"
+          v-model:searchValue="form.origin.name"
+          @update:id="form.origin.id = $event"
+        />
 
-        <SelectDates/>
-        <button type="submit" class="button-widget-search">{{ buttonText }}</button>
+        <div class="exchange" @click="switchDestinies()"></div>
+
+        <InputSearchDestinies
+          id="search_destiny"
+          icon="icon_pin_outline-desativado.svg"
+          placeholder="Indo para"
+          v-model:searchValue="form.destiny.name"
+          @update:id="form.destiny.id = $event"
+        />
+
+        <SelectDates
+          v-model:startDate="form.dates.start"
+          v-model:endDate="form.dates.end"
+        />
+
+        <button
+          type="submit"
+          class="button-widget-search"
+          :disabled="!isValid"
+        >
+          {{ buttonText }}
+        </button>
       </div>
     </form>
   </BoxContent>
@@ -40,6 +72,7 @@
     border-radius: 8px;
     width: 480px;
     padding: 8px;
+    position: relative;
   }
 
   .title-widget-search {
@@ -64,5 +97,23 @@
     width: 100%;
     font-size: 1rem;
     font-weight: 600;
+  }
+
+  .exchange {
+    background-image: url('../../../assets/img/icons/up_down_circle.svg');
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    color: #fff;
+    cursor: pointer;
+    height: 38px;
+    width: 38px;
+    z-index: 2;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: absolute;
+    top: 34%;
+    left: 87%;
   }
 </style>

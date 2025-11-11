@@ -6,7 +6,16 @@ import 'bulma-calendar/dist/css/bulma-calendar.min.css';
 const props = defineProps<{
   id: string,
   label: string
+  date: string
 }>()
+
+const emit = defineEmits<{
+  (e: 'update:date', value: string): void
+}>()
+
+const onDateChange = (e: Event) => {
+  emit('update:date', (e.target as HTMLInputElement).value)
+}
 
 const todayFormatted = computed(() => {
   const today = new Date();
@@ -36,6 +45,8 @@ onMounted(() => {
       <input
         :id="props.id"
         :name="props.id"
+        :value="props.date"
+        @input="onDateChange"
         class="input is-large"
         type="date"
         data-display-mode="default"

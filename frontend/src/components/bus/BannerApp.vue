@@ -26,22 +26,23 @@
 
   .box-banner-app {
     padding: 0 40px;
+    position: relative;
   }
 
   .link {
     height: 6%;
-    width: 4%;
+    width: 5%;
     position: absolute;
     z-index: 2;
   }
 
   .link-iphone {
-    left: 52%;
-    top: 155%;
+    left: 51%;
+    top: 80%;
   }
 
   .link-android {
-    left: 46%;
-    top: 155%;
+    left: 45%;
+    top: 80%;
   }
 </style>

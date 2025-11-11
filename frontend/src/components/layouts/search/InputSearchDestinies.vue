@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { computed, onMounted, ref } from 'vue'
+  import { computed, onMounted, ref, watch} from 'vue'
   import { GET_STOP_DETAILS, GET_STOPS } from '@/stores/actions'
   import { useStore } from '@/stores'
   import IStop from '@/interfaces/IStop'
@@ -13,11 +13,24 @@
     id: string
     icon: string
     placeholder: string
+    searchValue: string
   }>()
 
   const showSuggestions = ref(false)
-  const filterValue = ref('')
-  const idStopSelected = ref('')
+  const filterValue = ref(props.searchValue)
+
+  const emit = defineEmits<{
+    'update:searchValue': [value: string]
+    'update:id': [value: string]
+  }>()
+
+  watch(() => props.searchValue, (newValue) => {
+    filterValue.value = newValue
+  })
+
+  watch(filterValue, (newValue) => {
+    emit('update:searchValue', newValue)
+  })
 
   const allStops = computed<IStop[]>(() => store.state.stop?.stops ?? [])
 
@@ -34,7 +47,10 @@
 
   const selectSuggestion = (stop: IStop) => {
     store.dispatch(GET_STOP_DETAILS, stop.id).then(() => {
-      if ((store.state.stop.stopDetails.state != 'SP' && store.state.stop.stopDetails.state != 'PR') || !store.state.stop.stopDetails.state) {
+      const validStates = ['SP', 'PR']
+      const currentState = store.state.stop.stopDetails?.state
+
+      if (!validStates.includes(currentState)) {
         notify(
           NotificationType.FALHA,
           'Local indisponível',
@@ -44,9 +60,11 @@
       }
 
       filterValue.value = stop.name
-      idStopSelected.value = stop.id
+      emit('update:seachValue', stop.name)
+      emit('update:id', stop.id)
       showSuggestions.value = false
-    }).catch(() => {
+    }).catch((error) => {
+      console.error(error)
       notify(NotificationType.FALHA, 'Erro', 'Erro ao buscar detalhes da parada. Tente novamente mais tarde')
     })
   }
@@ -63,14 +81,13 @@
 <template>
   <div class="field">
     <div class="control has-icons-left">
-      <input type="hidden" :name="props.id" v-model="idStopSelected" />
       <input
         class="input has-background-white is-large custom-autocomplete"
-        :id="props.id"
         type="text"
+        list="stops-list"
+        :id="props.id"
         :placeholder="props.placeholder"
         v-model="filterValue"
-        list="stops-list"
         @focus="toggleSuggestions"
         @input="toggleSuggestions"
       />

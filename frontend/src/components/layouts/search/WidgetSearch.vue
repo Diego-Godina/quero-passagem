@@ -24,6 +24,7 @@
           id="search_origin"
           icon="icon_circle-desativado.svg"
           placeholder="Partindo de"
+          v-if="form && form.origin"
           v-model:searchValue="form.origin.name"
           @update:id="form.origin.id = $event"
         />
@@ -34,6 +35,7 @@
           id="search_destiny"
           icon="icon_pin_outline-desativado.svg"
           placeholder="Indo para"
+          v-if="form && form.origin"
           v-model:searchValue="form.destiny.name"
           @update:id="form.destiny.id = $event"
         />

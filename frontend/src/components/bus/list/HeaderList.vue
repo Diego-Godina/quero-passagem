@@ -78,8 +78,6 @@
     } else {
       selectedFilter.value = filter
     }
-
-    console.log('Filtro selecionado:', selectedFilter.value)
   }
 
   const filteredOrders = computed<IOrder[]>(() => {

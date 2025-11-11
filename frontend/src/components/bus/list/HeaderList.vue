@@ -101,7 +101,7 @@
 
 <template>
   <BoxContent>
-    <div class="py-5">
+    <div class="py-5" v-if="filteredOrders.length > 0">
       <BreadcrumbWebsite :breadcrumbs="breadcrumbs" />
 
       <h1 class="mt-5 mb-6">{{ title }}</h1>
@@ -120,14 +120,23 @@
         <OrderInfo v-for="order in filteredOrders" :key="order.id" :order="order" />
       </div>
     </div>
+
+    <div v-else class="empty-orders">
+      <h1>Não foi possível encontrar resultados com os filtros selecionados...</h1>
+    </div>
   </BoxContent>
 </template>
 
 <style scoped>
-h1 {
-  font-family: Sora, sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  font-weight: 700;
-}
+  h1 {
+    font-family: Sora, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 700;
+  }
+
+  .empty-orders {
+    padding: 100px 0;
+    text-align: center;
+  }
 </style>

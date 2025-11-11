@@ -41,6 +41,8 @@
 
   const toogleTemplateSeatMap = (): void => {
     showSeatMap.value = !showSeatMap.value
+
+
   }
 </script>
 

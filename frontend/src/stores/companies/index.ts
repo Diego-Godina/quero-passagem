@@ -1,5 +1,5 @@
-import IBusCompany from '@/interfaces/IBusCompany'
-import IBusCompanyDetails from '@/interfaces/IBusCompanyDetails'
+import IBusCompany from '@/interfaces/companies/IBusCompany'
+import IBusCompanyDetails from '@/interfaces/companies/IBusCompanyDetails'
 import { DEFINE_COMPANIES, DEFINE_COMPANY_DETAILS } from '@/stores/mutations'
 import { GET_COMPANIES, GET_COMPANY_DETAILS } from '@/stores/actions'
 import { getCompanies, getCompanyDetails } from '@/services/companies'

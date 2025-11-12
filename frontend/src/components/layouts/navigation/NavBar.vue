@@ -27,7 +27,7 @@
 
 <template>
   <BoxContent>
-    <nav class="d-flex flex-row align-items-center justify-content-between pt-3 bg-white">
+    <nav class="d-flex flex-row align-items-center justify-content-between pt-5 bg-white">
       <div class="d-flex flex-row">
         <RouterLink to="/" class="navbar-brand p-0 me-4">
           <img src="../../../assets/img/logos/logo_nova_grande.png" alt="Logo Quero Passagem" width="115">

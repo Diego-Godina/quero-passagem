@@ -1,4 +1,4 @@
-import IStop from '@/interfaces/IStop'
+import IStop from '@/interfaces/stops/IStop'
 
 export default interface ISearchForm {
   origin: IStop

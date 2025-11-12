@@ -1,13 +1,12 @@
 <script setup lang="ts">
   import BoxContent from '@/components/layouts/BoxContent.vue'
-  import { computed, ref, onMounted, watch } from 'vue'
-  import type IBreadcrumb from '@/interfaces/IBreadcrumb.ts'
+  import { computed, ref } from 'vue'
+  import type IBreadcrumb from '@/interfaces/list-view/IBreadcrumb.ts'
   import BreadcrumbWebsite from '@/components/layouts/navigation/BreadcrumbWebsite.vue'
-  import type IFilterByHour from '@/interfaces/IFilterByHour.ts'
+  import type IFilterByHour from '@/interfaces/list-view/IFilterByHour.ts'
   import BoxFilterByHour from '@/components/bus/list/BoxFilterByHour.vue'
-  import type IOrder from '@/interfaces/IOrder.ts'
+  import type IOrder from '@/interfaces/orders/IOrder.ts'
   import OrderInfo from '@/components/bus/list/OrderInfo.vue'
-  import { GET_COMPANY_DETAILS } from '@/stores/actions'
   import { useStore } from '@/stores'
   import { useDates } from '@/composables/useDates'
 

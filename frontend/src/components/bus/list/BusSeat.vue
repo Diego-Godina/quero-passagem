@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import type ISeat from '@/interfaces/ISeat.ts'
-  import { SeatsAvailability } from '@/enums/SeatsAvailability.ts'
+  import type ISeat from '@/interfaces/seats/ISeat.ts'
+  import { SeatsAvailability } from '@/enums/seats/SeatsAvailability.ts'
 
   const emit = defineEmits(['selectedSeat'])
 

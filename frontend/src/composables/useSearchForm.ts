@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 import { useNotify } from '@/composables/useNotify'
 import { NotificationType } from '@/interfaces/INotification'
 import { DEFINE_FORM } from '@/stores/mutations'
-import { ref, toRef } from 'vue'
+import { toRef } from 'vue'
 
 export function useSearchForm() {
   const store = useStore()

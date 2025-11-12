@@ -1,5 +1,5 @@
 import api from '@/services/api'
-import ISearchForm from '@/interfaces/ISearchForm'
+import ISearchForm from '@/interfaces/orders/ISearchForm'
 
 export const getOrders = (form: ISearchForm) => {
   return api.get('/orders', {

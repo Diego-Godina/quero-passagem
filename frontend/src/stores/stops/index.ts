@@ -1,8 +1,8 @@
 import { DEFINE_STOP_DETAILS, DEFINE_STOPS } from '@/stores/mutations'
 import { GET_STOP_DETAILS, GET_STOPS } from '@/stores/actions'
-import IStop from '@/interfaces/IStop'
+import IStop from '@/interfaces/stops/IStop'
 import { getStopDetails, getStops } from '@/services/stops'
-import IStopDetails from '@/interfaces/IStopDetails'
+import IStopDetails from '@/interfaces/stops/IStopDetails'
 
 export interface StateStops {
   stops: IStop[]

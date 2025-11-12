@@ -2,7 +2,7 @@
   import { computed, onMounted, ref, watch} from 'vue'
   import { GET_STOP_DETAILS, GET_STOPS } from '@/stores/actions'
   import { useStore } from '@/stores'
-  import IStop from '@/interfaces/IStop'
+  import IStop from '@/interfaces/stops/IStop'
   import { NotificationType } from '@/interfaces/INotification'
   import { useNotify } from '@/composables/useNotify'
 

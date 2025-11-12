@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-  import type IBreadcrumb from '@/interfaces/IBreadcrumb.ts'
+  import type IBreadcrumb from '@/interfaces/list-view/IBreadcrumb.ts'
 
   const props = defineProps<{
     breadcrumbs: IBreadcrumb[]

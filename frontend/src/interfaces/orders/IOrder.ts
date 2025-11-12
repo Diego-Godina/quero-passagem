@@ -1,5 +1,5 @@
-import type IBusCompany from '@/interfaces/IBusCompany.ts'
-import type IStop from '@/interfaces/IStop.ts'
+import type IBusCompany from '@/interfaces/companies/IBusCompany.ts'
+import type IStop from '@/interfaces/stops/IStop.ts'
 
 export default interface IOrder {
   'id': string,

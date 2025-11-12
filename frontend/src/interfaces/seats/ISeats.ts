@@ -1,4 +1,4 @@
-import type ISeat from '@/interfaces/ISeat.ts'
+import type ISeat from '@/interfaces/seats/ISeat.ts'
 
 export default interface ISeats {
   'orientation': string,

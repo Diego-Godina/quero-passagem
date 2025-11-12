@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type IFilterByHour from '@/interfaces/IFilterByHour.ts'
+  import type IFilterByHour from '@/interfaces/list-view/IFilterByHour.ts'
   import router from '@/router'
 
   const emit = defineEmits(['onFilterOrders'])

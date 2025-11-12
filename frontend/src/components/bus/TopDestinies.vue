@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { computed } from 'vue'
-  import type ITopDestinies from '@/interfaces/ITopDestinies.ts'
+  import type ITopDestinies from '@/interfaces/home-view/ITopDestinies.ts'
   import BoxContent from '@/components/layouts/BoxContent.vue'
 
   const topDestinies = computed<ITopDestinies[]>(() => {

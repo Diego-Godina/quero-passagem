@@ -1,6 +1,6 @@
-import type { StopType } from '@/enums/StopType.ts'
-import type IStopDetailsStation from '@/interfaces/IStopDetailsStation.ts'
-import type IStop from '@/interfaces/IStop.ts'
+import type { StopType } from '@/enums/stops/StopType.ts'
+import type IStopDetailsStation from '@/interfaces/stops/IStopDetailsStation.ts'
+import type IStop from '@/interfaces/stops/IStop.ts'
 
 export default interface IStopDetails {
   'id': string,

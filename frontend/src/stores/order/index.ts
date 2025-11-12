@@ -1,9 +1,9 @@
-import IOrder from '@/interfaces/IOrder'
+import IOrder from '@/interfaces/orders/IOrder'
 import { DEFINE_FORM, DEFINE_ORDERS, DEFINE_SEATS } from '@/stores/mutations'
 import { GET_COMPANY_DETAILS, GET_ORDERS, GET_SEATS } from '@/stores/actions'
 import { getOrders, getSeats } from '@/services/orders'
-import ISearchForm from '@/interfaces/ISearchForm'
-import ISeats from '@/interfaces/ISeats'
+import ISearchForm from '@/interfaces/orders/ISearchForm'
+import ISeats from '@/interfaces/seats/ISeats'
 
 const initialForm: ISearchForm = {
   origin: { name: '', id: '' },

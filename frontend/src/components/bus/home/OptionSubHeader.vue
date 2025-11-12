@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type IOptionsSubHeaderBusTickets from '@/interfaces/IOptionsSubHeaderBusTickets.ts'
+  import type IOptionsSubHeaderBusTickets from '@/interfaces/home-view/IOptionsSubHeaderBusTickets.ts'
 
   const props = defineProps<{
     option: IOptionsSubHeaderBusTickets

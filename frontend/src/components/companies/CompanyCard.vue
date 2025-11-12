@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type IBusCompany from '@/interfaces/IBusCompany.ts'
+  import type IBusCompany from '@/interfaces/companies/IBusCompany.ts'
 
   const props = defineProps<{
     company: IBusCompany

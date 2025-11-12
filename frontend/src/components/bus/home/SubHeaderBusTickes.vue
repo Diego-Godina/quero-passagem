@@ -2,7 +2,7 @@
 
 import OptionSubHeader from '@/components/bus/home/OptionSubHeader.vue'
 import { computed } from 'vue'
-import type IOptionsSubHeaderBusTickets from '@/interfaces/IOptionsSubHeaderBusTickets.ts'
+import type IOptionsSubHeaderBusTickets from '@/interfaces/home-view/IOptionsSubHeaderBusTickets.ts'
 import BoxContent from '@/components/layouts/BoxContent.vue'
 
 const optionsSubHeaderBusTickets = computed<IOptionsSubHeaderBusTickets[]>(() => {

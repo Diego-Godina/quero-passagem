@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type IOrder from '@/interfaces/IOrder.ts'
+  import type IOrder from '@/interfaces/orders/IOrder.ts'
   import StartEndOrder from '@/components/bus/list/StartEndOrder.vue'
   import OrderInfoFooter from '@/components/bus/list/OrderInfoFooter.vue'
   import { computed, ref } from 'vue'

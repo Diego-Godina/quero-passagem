@@ -1,12 +1,10 @@
 <script setup lang="ts">
   import InputSearchDestinies from '@/components/layouts/search/InputSearchDestinies.vue'
   import SelectDates from '@/components/layouts/search/SelectDates.vue'
-  import { useRouter } from 'vue-router'
   import BoxContent from '@/components/layouts/BoxContent.vue'
   import { useSearchForm } from '@/composables/useSearchForm'
 
   const { form, switchDestinies, isValid, submitSearch } = useSearchForm()
-  const router = useRouter()
 
   const props = defineProps<{
     title: string,

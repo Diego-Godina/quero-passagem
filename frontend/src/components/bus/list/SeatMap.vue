@@ -2,10 +2,10 @@
   import BlueButton from '@/components/buttons/BlueButton.vue'
   import BusSeat from '@/components/bus/list/BusSeat.vue'
   import { computed, ref } from 'vue'
-  import type ISeats from '@/interfaces/ISeats.ts'
-  import { SeatsAvailability } from '@/enums/SeatsAvailability.ts'
-  import type ISeat from '@/interfaces/ISeat.ts'
-  import { SeatsType } from '@/enums/SeatsType.ts'
+  import type ISeats from '@/interfaces/seats/ISeats.ts'
+  import { SeatsAvailability } from '@/enums/seats/SeatsAvailability.ts'
+  import type ISeat from '@/interfaces/seats/ISeat.ts'
+  import { SeatsType } from '@/enums/seats/SeatsType.ts'
   import { useStore } from "@/stores";
 
   const selectedSeats = ref<ISeat[]>([])

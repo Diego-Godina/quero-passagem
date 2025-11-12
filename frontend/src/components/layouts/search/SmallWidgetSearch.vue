@@ -4,7 +4,6 @@
   import { useSearchForm } from '@/composables/useSearchForm'
   const { form, switchDestinies, submitSearch } = useSearchForm()
 
-
 </script>
 
 <template>

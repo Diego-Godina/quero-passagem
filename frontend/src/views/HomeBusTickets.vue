@@ -10,6 +10,7 @@
   import TopDestinies from '@/components/bus/TopDestinies.vue'
   import BannerApp from '@/components/bus/home/BannerApp.vue'
   import ContactNewsletter from '@/components/bus/home/ContactNewsletter.vue'
+  import TravelBenefits from '@/components/bus/home/TravelBenefits.vue'
 
 </script>
 
@@ -26,6 +27,8 @@
     <BannerApp/>
 
     <ContactNewsletter />
+
+    <TravelBenefits />
 
     <TopDestinies/>
   </MainContent>

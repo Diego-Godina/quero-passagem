@@ -67,9 +67,9 @@
   h2 {
     color: #101828;
     font-family: Sora, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    line-height: 1.7rem;
+    line-height: normal;
   }
 
   .field {

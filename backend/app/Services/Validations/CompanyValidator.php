@@ -16,8 +16,6 @@ class CompanyValidator
             'id' => ['required', 'int'],
             'name' => ['required', 'string'],
             'logo' => ['array'],
-            'logo.svg' => ['string'],
-            'logo.jpg' => ['string'],
             'phone' => ['nullable', 'string'],
             'cnpj' => ['nullable', 'string'],
             'description' => ['array'],

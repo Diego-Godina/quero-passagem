@@ -5,7 +5,7 @@ import { getStopDetails, getStops } from '@/services/stops'
 import IStopDetails from '@/interfaces/IStopDetails'
 
 export interface StateStops {
-  stops: IStop[],
+  stops: IStop[]
   stopDetails: IStopDetails
 }
 
@@ -28,8 +28,8 @@ export const stop: Module<StateStops, Any> = {
   actions: {
     async [GET_STOPS]({ commit }) {
       try {
-        const { data } = await getStops()
-        commit(DEFINE_STOPS, data)
+        const response = await getStops()
+        commit(DEFINE_STOPS, response.data)
       } catch (error) {
         console.error('Erro ao buscar paradas:', error)
       }
@@ -37,8 +37,8 @@ export const stop: Module<StateStops, Any> = {
 
     async [GET_STOP_DETAILS]({ commit }, idStop: string) {
       try {
-        const { data } = await getStopDetails(idStop)
-        commit(DEFINE_STOP_DETAILS, data)
+        const response = await getStopDetails(idStop)
+        commit(DEFINE_STOP_DETAILS, response.data)
       } catch (error) {
         console.error('Erro ao buscar paradas:', error)
       }

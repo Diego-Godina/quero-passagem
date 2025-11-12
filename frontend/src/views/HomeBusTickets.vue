@@ -25,9 +25,7 @@
 
     <BannerApp/>
 
-    <section>
-      <ContactNewsletter />
-    </section>
+    <ContactNewsletter />
 
     <TopDestinies/>
   </MainContent>

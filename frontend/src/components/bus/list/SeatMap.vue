@@ -22,7 +22,7 @@
   }
 
   const seats = computed<ISeats>(() => {
-    return store.state.order.seats[props.orderId][0]
+    return store.state.order.seats[props.orderId]
   })
 
   const onSelectedSeat = (seat: ISeat): void => {

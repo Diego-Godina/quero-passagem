@@ -1,12 +1,13 @@
 <script setup lang="ts">
   import BoxContent from '@/components/layouts/BoxContent.vue'
-  import { computed, ref } from 'vue'
+  import { computed, ref, onMounted, watch } from 'vue'
   import type IBreadcrumb from '@/interfaces/IBreadcrumb.ts'
   import BreadcrumbWebsite from '@/components/layouts/navigation/BreadcrumbWebsite.vue'
   import type IFilterByHour from '@/interfaces/IFilterByHour.ts'
   import BoxFilterByHour from '@/components/bus/list/BoxFilterByHour.vue'
   import type IOrder from '@/interfaces/IOrder.ts'
   import OrderInfo from '@/components/bus/list/OrderInfo.vue'
+  import { GET_COMPANY_DETAILS } from '@/stores/actions'
   import { useStore } from '@/stores'
   import { useDates } from '@/composables/useDates'
 
@@ -128,15 +129,15 @@
 </template>
 
 <style scoped>
-  h1 {
-    font-family: Sora, sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    font-weight: 700;
-  }
+h1 {
+  font-family: Sora, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-weight: 700;
+}
 
-  .empty-orders {
-    padding: 100px 0;
-    text-align: center;
-  }
+.empty-orders {
+  padding: 100px 0;
+  text-align: center;
+}
 </style>

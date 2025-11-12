@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeBusTickets from '@/views/HomeBusTickets.vue'
 import ListBusTickets from '@/views/ListBusTickets.vue'
+import { GET_COMPANIES } from '@/stores/actions'
+import { useStore } from '@/stores'
 
 const routes = [
   {

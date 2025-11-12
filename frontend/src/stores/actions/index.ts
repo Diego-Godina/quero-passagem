@@ -3,3 +3,6 @@ export const GET_STOP_DETAILS = 'GET_STOP_DETAILS'
 
 export const GET_ORDERS = 'GET_ORDERS'
 export const GET_SEATS = 'GET_SEATS'
+
+export const GET_COMPANIES = 'GET_COMPANIES'
+export const GET_COMPANY_DETAILS = 'GET_COMPANY_DETAILS'

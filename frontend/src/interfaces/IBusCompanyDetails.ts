@@ -5,5 +5,11 @@ export default interface IBusCompanyDetails {
     svg?: string
     jpg?: string
   }
-
+  phone?: string
+  cnpj?: string
+  description: {
+    pt?: string
+    en?: string
+    es?: string
+  }
 }

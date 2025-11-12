@@ -1,6 +1,6 @@
 import IOrder from '@/interfaces/IOrder'
-import { CLEAR_SEATS, DEFINE_FORM, DEFINE_ORDERS, DEFINE_SEATS } from '@/stores/mutations'
-import { GET_ORDERS, GET_SEATS } from '@/stores/actions'
+import { DEFINE_FORM, DEFINE_ORDERS, DEFINE_SEATS } from '@/stores/mutations'
+import { GET_COMPANY_DETAILS, GET_ORDERS, GET_SEATS } from '@/stores/actions'
 import { getOrders, getSeats } from '@/services/orders'
 import ISearchForm from '@/interfaces/ISearchForm'
 import ISeats from '@/interfaces/ISeats'
@@ -37,11 +37,16 @@ export const order: Module<StateOrders, Any> = {
   },
 
   actions: {
-    async [GET_ORDERS]({ commit }, form: ISearchForm) {
+    async [GET_ORDERS]({ commit, dispatch }, form: ISearchForm) {
+
       try {
         const response = await getOrders(form)
         commit(DEFINE_ORDERS, response.data)
         commit(DEFINE_FORM, form)
+
+        for (const order of response.data) {
+          await dispatch(GET_COMPANY_DETAILS, order.company.id)
+        }
       } catch (error) {
         console.error('Erro ao buscar tickets', error)
       }
@@ -49,7 +54,7 @@ export const order: Module<StateOrders, Any> = {
     async [GET_SEATS]({ commit }, orderId: string) {
       try {
         const response = await getSeats(orderId)
-        commit(DEFINE_SEATS, { seats: response.data, orderId })
+        commit(DEFINE_SEATS, { seats: response.data[0], orderId })
       } catch (error) {
         console.error('Erro ao buscar assentos', error)
       }

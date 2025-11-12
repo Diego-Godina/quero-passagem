@@ -4,6 +4,7 @@ import { createStore, useStore as vuexUseStore } from 'vuex'
 import { StateStops, stop } from '@/stores/stops'
 import { StateOrders, order } from '@/stores/order'
 import { notification, StateNotification } from '@/stores/notify'
+import { company } from '@/stores/companies'
 
 export interface State {
   stop: StateStops
@@ -18,6 +19,7 @@ export const store = createStore<State>({
     stop,
     notification,
     order,
+    company
   },
 })
 

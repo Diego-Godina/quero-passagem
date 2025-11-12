@@ -2,11 +2,10 @@
   import type IOrder from '@/interfaces/IOrder.ts'
   import StartEndOrder from '@/components/bus/list/StartEndOrder.vue'
   import OrderInfoFooter from '@/components/bus/list/OrderInfoFooter.vue'
-  import { ref } from 'vue'
+  import { computed, ref } from 'vue'
   import SeatMap from '@/components/bus/list/SeatMap.vue'
   import { useStore } from "@/stores";
   import { GET_SEATS } from '@/stores/actions'
-  import { CLEAR_SEATS } from '@/stores/mutations'
 
   const props = defineProps<{
     order: IOrder,
@@ -14,6 +13,11 @@
 
   const showSeatMap = ref(false)
   const store = useStore()
+
+  const companyLogo = computed(() => {
+    const companyDetails = store.state.company.companyDetails[props.order.company.id]
+    return companyDetails?.logo?.svg ?? companyDetails?.logo?.jpg
+  })
 
   const calcDuration = (): string => {
     const duration = props.order.travelDuration
@@ -58,8 +62,8 @@
   <div class="box-order d-flex flex-column py-4 ps-3 pe-4 bg-white">
     <div class="d-flex justify-content-between align-items-center pb-3">
       <div class="pointer d-flex gap-5 align-items-center" @click="toogleTemplateSeatMap">
-        <div class="logo-company">
-          <img :src="`../../../../src/assets/img/companies/${props.order.company.icon}`" :alt="`${ props.order.company.name }`" class="company-logo"/>
+        <div>
+          <img :src="companyLogo" :alt="`${ props.order.company.name }`" class="company-logo"/>
         </div>
 
         <div class="d-flex gap-4">
@@ -133,7 +137,8 @@
   }
 
   .company-logo {
-    max-width: 120px
+    max-width: 120px;
+    width: 120px;
   }
 
   .price {

@@ -41,7 +41,7 @@ export function useSearchForm() {
         'Formulário inválido',
         'Por favor, informe local de partida, destino e data de saída',
       )
-      console.warn('Formulário inválido')
+      console.error('Formulário inválido')
       return
     }
 
@@ -49,7 +49,7 @@ export function useSearchForm() {
       await store.dispatch(GET_ORDERS, JSON.parse(JSON.stringify(form.value)))
       await router.push({ name: 'list-bus-tickets' })
     } catch (error) {
-      console.warn(error)
+      console.error(error)
       notify(NotificationType.FALHA, 'Erro na busca', 'Não foi possível buscar as passagens')
     } finally {
     }

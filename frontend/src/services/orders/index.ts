@@ -10,3 +10,12 @@ export const getOrders = (form: ISearchForm) => {
     },
   })
 }
+
+export const getSeats = (orderId: string) => {
+  return api.get(`/orders/${orderId}/seats`, {
+    params: {
+      'orientation': 'horizontal',
+      'type': 'matrix'
+    }
+  })
+}

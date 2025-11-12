@@ -123,38 +123,38 @@
 </template>
 
 <style scoped>
-.custom-autocomplete {
-  position: relative;
-}
-
-.suggestions-list {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border: 1px solid #dbdbdb;
-  border-top: none;
-  border-radius: 0 0 4px 4px;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 10;
-  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
-}
-
-.suggestion-item {
-  padding: 8px 12px;
-  cursor: pointer;
-  border-bottom: 1px solid #f5f5f5;
-  font-size: 14px;
-}
-
-.suggestion-item:hover {
-  background-color: #293366f0;
-  color: #fff;
-}
-
-.suggestion-item:last-child {
-  border-bottom: none;
-}
+  .custom-autocomplete {
+    position: relative;
+  }
+  
+  .suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  }
+  
+  .suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 14px;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #293366f0;
+    color: #fff;
+  }
+  
+  .suggestion-item:last-child {
+    border-bottom: none;
+  }
 </style>

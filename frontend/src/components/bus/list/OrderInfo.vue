@@ -4,12 +4,16 @@
   import OrderInfoFooter from '@/components/bus/list/OrderInfoFooter.vue'
   import { ref } from 'vue'
   import SeatMap from '@/components/bus/list/SeatMap.vue'
+  import { useStore } from "@/stores";
+  import { GET_SEATS } from '@/stores/actions'
+  import { CLEAR_SEATS } from '@/stores/mutations'
 
   const props = defineProps<{
     order: IOrder,
   }>()
 
   const showSeatMap = ref(false)
+  const store = useStore()
 
   const calcDuration = (): string => {
     const duration = props.order.travelDuration
@@ -42,7 +46,11 @@
   const toogleTemplateSeatMap = (): void => {
     showSeatMap.value = !showSeatMap.value
 
+    if (!showSeatMap.value) {
+      return
+    }
 
+    store.dispatch(GET_SEATS, props.order.id)
   }
 </script>
 

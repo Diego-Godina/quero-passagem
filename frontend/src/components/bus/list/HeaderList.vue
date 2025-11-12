@@ -72,14 +72,6 @@
     return store.state.order.orders
   })
 
-  const onFilterOrders = (filter: IFilterByHour): void => {
-    if (selectedFilter.value?.text === filter.text) {
-      selectedFilter.value = null
-    } else {
-      selectedFilter.value = filter
-    }
-  }
-
   const filteredOrders = computed<IOrder[]>(() => {
     const all = orders.value ?? []
 
@@ -97,11 +89,19 @@
       return isInRangeSameDay(tDep, startSec, endSec)
     })
   })
+
+  const onFilterOrders = (filter: IFilterByHour): void => {
+    if (selectedFilter.value?.text === filter.text) {
+      selectedFilter.value = null
+    } else {
+      selectedFilter.value = filter
+    }
+  }
 </script>
 
 <template>
   <BoxContent>
-    <div class="py-5" v-if="filteredOrders.length > 0">
+    <div class="py-5" v-if="orders.length > 0">
       <BreadcrumbWebsite :breadcrumbs="breadcrumbs" />
 
       <h1 class="mt-5 mb-6">{{ title }}</h1>

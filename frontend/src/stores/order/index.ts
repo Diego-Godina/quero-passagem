@@ -1,8 +1,9 @@
 import IOrder from '@/interfaces/IOrder'
-import { DEFINE_FORM, DEFINE_ORDERS } from '@/stores/mutations'
-import { GET_ORDERS } from '@/stores/actions'
-import { getOrders } from '@/services/orders'
+import { CLEAR_SEATS, DEFINE_FORM, DEFINE_ORDERS, DEFINE_SEATS } from '@/stores/mutations'
+import { GET_ORDERS, GET_SEATS } from '@/stores/actions'
+import { getOrders, getSeats } from '@/services/orders'
 import ISearchForm from '@/interfaces/ISearchForm'
+import ISeats from '@/interfaces/ISeats'
 
 const initialForm: ISearchForm = {
   origin: { name: '', id: '' },
@@ -12,13 +13,15 @@ const initialForm: ISearchForm = {
 
 export interface StateOrders {
   orders: IOrder[],
-  form: ISearchForm
+  form: ISearchForm,
+  seats: ISeats[]
 }
 
 export const order: Module<StateOrders, Any> = {
   state: (): StateOrders => ({
     orders: [],
-    form: initialForm
+    form: initialForm,
+    seats: []
   }),
 
   mutations: {
@@ -27,6 +30,9 @@ export const order: Module<StateOrders, Any> = {
     },
     [DEFINE_FORM](state, form: ISearchForm) {
       state.form = form
+    },
+    [DEFINE_SEATS](state, payload: { seats: ISeats[]; orderId: string }) {
+      state.seats[payload.orderId] = payload.seats
     }
   },
 
@@ -38,6 +44,14 @@ export const order: Module<StateOrders, Any> = {
         commit(DEFINE_FORM, form)
       } catch (error) {
         console.error('Erro ao buscar tickets', error)
+      }
+    },
+    async [GET_SEATS]({ commit }, orderId: string) {
+      try {
+        const response = await getSeats(orderId)
+        commit(DEFINE_SEATS, { seats: response.data, orderId })
+      } catch (error) {
+        console.error('Erro ao buscar assentos', error)
       }
     }
   }

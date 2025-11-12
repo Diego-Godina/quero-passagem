@@ -108,4 +108,15 @@
     top: 34%;
     left: 87%;
   }
+
+  @media screen and (max-width: 768px) {
+    .widget-search {
+      width: 300px;
+    }
+
+    .exchange {
+      top: 34%;
+      left: 80%;
+    }
+  }
 </style>

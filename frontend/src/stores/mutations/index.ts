@@ -3,5 +3,7 @@ export const DEFINE_STOP_DETAILS = 'DEFINE_STOP_DETAILS'
 
 export const DEFINE_ORDERS = 'DEFINE_ORDERS'
 export const DEFINE_FORM = 'DEFINE_FORM'
+export const DEFINE_SEATS = 'DEFINE_SEATS'
+export const CLEAR_SEATS = 'CLEAR_SEATS'
 
 export const NOTIFY = 'NOTIFY'

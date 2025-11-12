@@ -9,30 +9,15 @@
   import OrderInfo from '@/components/bus/list/OrderInfo.vue'
   import { useStore } from '@/stores'
   import { useDates } from '@/composables/useDates'
+  import { FILTERS_BY_HOURS } from '@/constants/filtersByHours'
+  import { BREADCRUMBS } from '@/constants/breadcrumbs'
 
   const store = useStore()
   const { timeToSeconds, isInRangeSameDay } = useDates()
   const selectedFilter = ref<IFilterByHour | null>(null)
 
-  const breadcrumbs = computed<IBreadcrumb[]>(() => {
-    return [
-      {
-        name: 'Passagem de ida',
-        link: '/',
-        active: true,
-      },
-      {
-        name: 'Passagem de volta',
-        link: '/',
-        active: false,
-      },
-      {
-        name: 'Pagamento',
-        link: '/',
-        active: false,
-      },
-    ]
-  })
+  const breadcrumbs = BREADCRUMBS as IBreadcrumb[]
+  const filtersByHours = FILTERS_BY_HOURS as IFilterByHour[]
 
   const title = computed<string>(() => {
     return (
@@ -41,31 +26,6 @@
       ' para ' +
       store.state.order.form.destiny.name
     )
-  })
-
-  const filtersByHours = computed<IFilterByHour[]>(() => {
-    return [
-      {
-        text: '00h00 - 05h59',
-        start: '00:00:00',
-        end: '05:59:59',
-      },
-      {
-        text: '06h00 - 11h59',
-        start: '06:00:00',
-        end: '11:59:59',
-      },
-      {
-        text: '12h00 - 17h59',
-        start: '12:00:00',
-        end: '17:59:59',
-      },
-      {
-        text: '18h00 - 23h59',
-        start: '18:00:00',
-        end: '23:59:59',
-      },
-    ]
   })
 
   const orders = computed<IOrder[]>(() => {
@@ -82,8 +42,8 @@
 
     if (isNaN(startSec) || isNaN(endSec)) return all
 
-    return all.filter((o) => {
-      const depTime = o?.departure?.time ?? null
+    return all.filter((order) => {
+      const depTime = order?.departure?.time ?? null
       const tDep = timeToSeconds(depTime)
 
       return isInRangeSameDay(tDep, startSec, endSec)

@@ -5,24 +5,9 @@
   import AButton from '@/components/buttons/AButton.vue'
   import BlueButton from '@/components/buttons/BlueButton.vue'
   import BoxContent from '@/components/layouts/BoxContent.vue'
+  import { NAV_ITEMS } from '@/constants/navItems'
 
-  const navItems = computed<INavItem[]>(() => {
-    return [
-      {
-        'title': 'Passagens',
-        'icon': 'rodoviario.svg',
-        'alt': 'Ícone rodoviário',
-        'link': '/'
-      },
-      {
-        'title': 'Hotéis',
-        'icon': 'hotel.svg',
-        'alt': 'Ícone hotéis',
-        'link': '/hoteis',
-        'newItem': true
-      }
-    ]
-  })
+  const navItems = NAV_ITEMS as INavItem[]
 </script>
 
 <template>

@@ -1,11 +1,11 @@
 <template>
-  <section>
+  <div>
     <slot></slot>
-  </section>
+  </div>
 </template>
 
 <style scoped>
-  section {
+  div {
     padding-right: 40px;
     padding-left: 40px;
   }

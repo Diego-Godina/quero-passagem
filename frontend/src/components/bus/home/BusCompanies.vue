@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { computed } from 'vue'
   import type IBusCompany from '@/interfaces/companies/IBusCompany.ts'
   import CompanyCard from '@/components/companies/CompanyCard.vue'
   import BoxContent from '@/components/layouts/BoxContent.vue'

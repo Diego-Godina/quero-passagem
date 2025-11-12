@@ -7,6 +7,7 @@ import FooterCopyright from '@/components/layouts/footer/FooterCopyright.vue'
 import SmallHeaderSearch from '@/components/layouts/search/SmallHeaderSearch.vue'
 import HeaderList from '@/components/bus/list/HeaderList.vue'
 import TopDestinies from '@/components/bus/TopDestinies.vue'
+import GeneralInfo from '@/components/bus/list/GeneralInfo.vue'
 </script>
 
 <template>
@@ -16,6 +17,8 @@ import TopDestinies from '@/components/bus/TopDestinies.vue'
 
   <div class="bg-gray">
     <HeaderList/>
+
+    <GeneralInfo/>
   </div>
 
   <TopDestinies/>

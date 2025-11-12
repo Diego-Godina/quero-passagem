@@ -4,7 +4,7 @@
   import BoxContent from '@/components/layouts/BoxContent.vue'
   import { useSearchForm } from '@/composables/useSearchForm'
 
-  const { form, switchDestinies, isValid, submitSearch } = useSearchForm()
+  const { form, switchDestinies, submitSearch } = useSearchForm()
 
   const props = defineProps<{
     title: string,
@@ -46,7 +46,6 @@
         <button
           type="submit"
           class="button-widget-search"
-          :disabled="!isValid"
         >
           {{ buttonText }}
         </button>

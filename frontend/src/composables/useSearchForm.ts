@@ -59,7 +59,6 @@ export function useSearchForm() {
     form,
     switchDestinies,
     resetForm,
-    isValid,
     submitSearch,
   }
 }

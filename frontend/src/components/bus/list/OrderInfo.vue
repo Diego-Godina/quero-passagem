@@ -12,6 +12,7 @@
   }>()
 
   const showSeatMap = ref(false)
+  const isLoading = ref(false)
   const store = useStore()
 
   const companyLogo = computed(() => {
@@ -47,21 +48,26 @@
     return 'R$ ' + price;
   }
 
-  const toogleTemplateSeatMap = (): void => {
+  const toggleTemplateSeatMap = async (): void => {
     showSeatMap.value = !showSeatMap.value
 
-    if (!showSeatMap.value) {
+    if (!showSeatMap.value || store.state.order.seats[props.order.id]) {
       return
     }
 
-    store.dispatch(GET_SEATS, props.order.id)
+    isLoading.value = true
+    try {
+      await store.dispatch(GET_SEATS, props.order.id)
+    } finally {
+      isLoading.value = false
+    }
   }
 </script>
 
 <template>
   <div class="box-order d-flex flex-column py-4 ps-3 pe-4 bg-white">
     <div class="d-flex justify-content-between align-items-center pb-3">
-      <div class="pointer d-flex gap-5 align-items-center" @click="toogleTemplateSeatMap">
+      <div class="pointer d-flex gap-5 align-items-center" @click="toggleTemplateSeatMap">
         <div>
           <img :src="companyLogo" :alt="`${ props.order.company.name }`" class="company-logo"/>
         </div>
@@ -90,13 +96,16 @@
         <div class="seat-class">{{ props.order.seatClass }}</div>
 
         <div class="d-flex gap-3 align-items-center">
-          <div class="pointer price-ticket d-flex flex-column align-items-end" @click="toogleTemplateSeatMap">
+          <div class="pointer price-ticket d-flex flex-column align-items-end" @click="toggleTemplateSeatMap">
             <span class="price">{{ priceFormatted() }}</span>
             <span class="info-gray">por pessoa</span>
           </div>
           <div>
-            <button class="pointer button button-choose" type="button" v-if="!showSeatMap" @click="toogleTemplateSeatMap">Escolher ida</button>
-            <button class="pointer button button-close" type="button" v-if="showSeatMap" @click="toogleTemplateSeatMap">Fechar</button>
+            <button class="pointer button button-choose" type="button" v-if="!showSeatMap" @click="toggleTemplateSeatMap">Escolher ida</button>
+            <button class="pointer button button-close" type="button" v-if="showSeatMap" @click="toggleTemplateSeatMap">
+              <img class="me-3" v-if="isLoading" src="@/assets/img/loading.gif" alt="Carregando..." width="10"/>
+              <span>Fechar</span>
+            </button>
           </div>
         </div>
       </div>

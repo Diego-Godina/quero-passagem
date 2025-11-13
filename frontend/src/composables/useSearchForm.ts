@@ -15,8 +15,6 @@ export function useSearchForm() {
   const isLoading = ref(false)
 
   const switchDestinies = () => {
-    if(isLoading.value) return
-
     const newForm = {
       ...form.value,
       origin: form.value.destiny,

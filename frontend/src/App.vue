@@ -17,6 +17,8 @@
 
     color: var(--primary-text);
     font-family: 'Inter', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
   html {

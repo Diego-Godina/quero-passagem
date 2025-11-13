@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 use App\Http\Traits\HandleExternalRequests;
 use App\Interfaces\CompaniesInterface;
-use App\Interfaces\StopsInterface;
 use GuzzleHttp\Client;
 
 class ApiCompaniesRepository implements CompaniesInterface

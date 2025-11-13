@@ -2,6 +2,7 @@
 
 namespace App\Http\Traits;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\GuzzleException;
@@ -38,11 +39,13 @@ trait HandleExternalRequests
         } catch (ConnectException $e) {
             Log::error("Falha de conexão ({$uri}): " . $e->getMessage());
             return ['data' => [], 'status' => 503];
+
         } catch (RequestException $e) {
             $status = $e->hasResponse() ? $e->getResponse()->getStatusCode() : 502;
             Log::error("Erro HTTP ({$uri}) status {$status}: " . $e->getMessage());
             return ['data' => [], 'status' => $status];
-        } catch (\Exception $e) {
+
+        } catch (Exception $e) {
             Log::error("Erro inesperado ({$uri}): " . $e->getMessage());
             return ['data' => [], 'status' => 500];
         }

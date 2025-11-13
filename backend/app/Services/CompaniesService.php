@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Interfaces\CompaniesInterface;
 use App\Services\Validations\CompanyValidator;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
 class CompaniesService

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Services\CompaniesService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
 class CompaniesController extends Controller

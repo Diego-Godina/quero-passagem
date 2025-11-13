@@ -33,7 +33,8 @@ export function useSearchForm() {
   }
 
   const isValid = (): boolean => {
-    return !!form.value.origin.id && !!form.value.destiny.id && !!form.value.dates.start
+    const datesAreValid = new Date(form.value.dates.start) < new Date(form.value.dates.end)
+    return !!form.value.origin.id && !!form.value.destiny.id && !!form.value.dates.start && datesAreValid
   }
 
   const submitSearch = async () => {
@@ -41,7 +42,7 @@ export function useSearchForm() {
       notify(
         NotificationType.FALHA,
         'Formulário inválido',
-        'Por favor, informe local de partida, destino e data de saída',
+        'Por favor, informe local de partida, destino e data de saída após data de retorno',
       )
       console.error('Formulário inválido')
       return

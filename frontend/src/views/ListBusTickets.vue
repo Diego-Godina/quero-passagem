@@ -5,7 +5,7 @@ import AboveFooter from '@/components/layouts/footer/AboveFooter.vue'
 import FooterPage from '@/components/layouts/footer/FooterPage.vue'
 import FooterCopyright from '@/components/layouts/footer/FooterCopyright.vue'
 import SmallHeaderSearch from '@/components/layouts/search/SmallHeaderSearch.vue'
-import HeaderList from '@/components/bus/list/HeaderList.vue'
+import BusList from '@/components/bus/list/BusList.vue'
 import TopDestinies from '@/components/bus/TopDestinies.vue'
 import GeneralInfo from '@/components/bus/list/GeneralInfo.vue'
 </script>
@@ -16,7 +16,7 @@ import GeneralInfo from '@/components/bus/list/GeneralInfo.vue'
   <SmallHeaderSearch/>
 
   <div class="bg-gray">
-    <HeaderList/>
+    <BusList/>
 
     <GeneralInfo/>
   </div>

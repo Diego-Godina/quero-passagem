@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import NavItem from '@/components/layouts/navigation/NavItem.vue'
   import type INavItem from '@/interfaces/INavItem.ts'
-  import { computed } from 'vue'
   import AButton from '@/components/buttons/AButton.vue'
   import BlueButton from '@/components/buttons/BlueButton.vue'
   import BoxContent from '@/components/layouts/BoxContent.vue'

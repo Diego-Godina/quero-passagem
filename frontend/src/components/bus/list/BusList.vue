@@ -76,9 +76,14 @@
         />
       </div>
 
-      <div class="block-tickets-options d-flex flex-column gap-3 py-3">
+      <div class="pt-4 pb-2">
+        <span class="text"> {{ orders.length }} passagens</span>
+      </div>
+
+      <div class="block-tickets-options d-flex flex-column gap-3 pb-3">
         <OrderInfo v-for="order in filteredOrders" :key="order.id" :order="order" />
       </div>
+
     </div>
 
     <div v-else class="empty-orders">
@@ -88,15 +93,19 @@
 </template>
 
 <style scoped>
-h1 {
-  font-family: Sora, sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  font-weight: 700;
-}
+  h1 {
+    font-family: Sora, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 700;
+  }
 
-.empty-orders {
-  padding: 100px 0;
-  text-align: center;
-}
+  .empty-orders {
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  .text {
+    color: #46484d;
+  }
 </style>

@@ -2,7 +2,7 @@
   import InputSearchDestinies from '@/components/layouts/search/InputSearchDestinies.vue'
   import SelectDate from '@/components/layouts/search/SelectDate.vue'
   import { useSearchForm } from '@/composables/useSearchForm'
-  const { form, switchDestinies, submitSearch } = useSearchForm()
+  const { form, switchDestinies, submitSearch, isLoading } = useSearchForm()
 
 </script>
 
@@ -17,9 +17,10 @@
           v-if="form && form.origin"
           v-model:searchValue="form.origin.name"
           @update:id="form.origin.id = $event"
+          :isLoading="isLoading"
         />
 
-        <div class="exchange" @click="switchDestinies()"></div>
+        <div class="exchange" :class="{'disabled': isLoading }" @click="switchDestinies()"></div>
 
         <InputSearchDestinies
           id="search_destiny"
@@ -28,6 +29,7 @@
           v-if="form && form.origin"
           v-model:searchValue="form.destiny.name"
           @update:id="form.destiny.id = $event"
+          :isLoading="isLoading"
         />
       </div>
 
@@ -37,6 +39,7 @@
             id="dt-go"
             label="Data Saída"
             v-model:date="form.dates.start"
+            :isLoading="isLoading"
           />
         </div>
 
@@ -45,11 +48,15 @@
             id="dt-back"
             label="Data Retorno"
             v-model:date="form.dates.end"
+            :isLoading="isLoading"
           />
         </div>
       </div>
 
-      <button type="submit" class="button-widget-search"><i class="uil uil-search"></i></button>
+      <button type="submit" class="button-widget-search d-flex align-items-center">
+        <img v-if="isLoading" src="@/assets/img/loading.gif" alt="Carregando..." width="20">
+        <i v-else class="uil uil-search"></i>
+      </button>
     </div>
   </form>
 </template>
@@ -78,6 +85,12 @@
     padding: 12px 24px;
     width: fit-content;
     height: 38px;
+  }
+
+  .button-widget-search:disabled, .disabled {
+    opacity: 0.9;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 
   .exchange {

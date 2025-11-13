@@ -14,6 +14,7 @@
     icon: string
     placeholder: string
     searchValue: string
+    isLoading: boolean
   }>()
 
   const showSuggestions = ref(false)
@@ -90,6 +91,7 @@
         v-model="filterValue"
         @focus="toggleSuggestions"
         @input="toggleSuggestions"
+        :disabled="isLoading"
       />
 
       <div v-if="showSuggestions && filteredStops.length" class="suggestions-list">

@@ -4,15 +4,19 @@ import { useRouter } from 'vue-router'
 import { useNotify } from '@/composables/useNotify'
 import { NotificationType } from '@/interfaces/INotification'
 import { DEFINE_FORM } from '@/stores/mutations'
-import { toRef } from 'vue'
+import { toRef, ref } from 'vue'
 
 export function useSearchForm() {
   const store = useStore()
   const router = useRouter()
   const { notify } = useNotify()
+
   const form = toRef(store.state.order, 'form')
+  const isLoading = ref(false)
 
   const switchDestinies = () => {
+    if(isLoading.value) return
+
     const newForm = {
       ...form.value,
       origin: form.value.destiny,
@@ -45,6 +49,7 @@ export function useSearchForm() {
       return
     }
 
+    isLoading.value = true
     try {
       await store.dispatch(GET_ORDERS, JSON.parse(JSON.stringify(form.value)))
       await router.push({ name: 'list-bus-tickets' })
@@ -52,6 +57,7 @@ export function useSearchForm() {
       console.error(error)
       notify(NotificationType.FALHA, 'Erro na busca', 'Não foi possível buscar as passagens')
     } finally {
+      isLoading.value = false
     }
   }
 
@@ -60,5 +66,6 @@ export function useSearchForm() {
     switchDestinies,
     resetForm,
     submitSearch,
+    isLoading
   }
 }

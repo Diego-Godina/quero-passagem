@@ -5,6 +5,7 @@
     id: string
     label: string
     date: string
+    isLoading: boolean
   }>()
 
   const emit = defineEmits<{
@@ -38,16 +39,16 @@
         :model-config="{ type: 'string', mask: 'DD/MM/YYYY' }"
         locale="pt-BR"
         :min-date="new Date()"
-        trim-weeks
+        trim-week
       >
         <template #default="{ inputValue, inputEvents }">
           <input
             :id="id"
             :value="inputValue"
-            v-on="inputEvents"
+            v-on="!props.isLoading ? inputEvents : {}"
             :placeholder="label"
             class="input is-large"
-            readonly
+            :disabled="isLoading"
           />
           <span class="icon is-small is-left">
             <img src="@/assets/img/icons/icon_calendar_outline.svg" alt="data" width="15">

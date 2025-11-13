@@ -1,15 +1,15 @@
 <script setup lang="ts">
-  import InputSearchDestinies from '@/components/layouts/search/InputSearchDestinies.vue'
-  import SelectDates from '@/components/layouts/search/SelectDates.vue'
-  import BoxContent from '@/components/layouts/BoxContent.vue'
-  import { useSearchForm } from '@/composables/useSearchForm'
+import InputSearchDestinies from '@/components/layouts/search/InputSearchDestinies.vue'
+import SelectDates from '@/components/layouts/search/SelectDates.vue'
+import BoxContent from '@/components/layouts/BoxContent.vue'
+import { useSearchForm } from '@/composables/useSearchForm'
 
-  const { form, switchDestinies, submitSearch } = useSearchForm()
+const { form, switchDestinies, submitSearch, isLoading } = useSearchForm()
 
-  const props = defineProps<{
-    title: string,
-    buttonText: string
-  }>()
+const props = defineProps<{
+  title: string
+  buttonText: string
+}>()
 </script>
 
 <template>
@@ -25,9 +25,10 @@
           v-if="form && form.origin"
           v-model:searchValue="form.origin.name"
           @update:id="form.origin.id = $event"
+          :isLoading="isLoading"
         />
 
-        <div class="exchange" @click="switchDestinies()"></div>
+        <div class="exchange" :class="{'disabled': isLoading }" @click="switchDestinies()"></div>
 
         <InputSearchDestinies
           id="search_destiny"
@@ -36,18 +37,18 @@
           v-if="form && form.origin"
           v-model:searchValue="form.destiny.name"
           @update:id="form.destiny.id = $event"
+          :isLoading="isLoading"
         />
 
         <SelectDates
           v-model:startDate="form.dates.start"
           v-model:endDate="form.dates.end"
+          :isLoading="isLoading"
         />
 
-        <button
-          type="submit"
-          class="button-widget-search"
-        >
-          {{ buttonText }}
+        <button type="submit" class="button-widget-search" :disabled="isLoading">
+          <img v-if="isLoading" src="@/assets/img/loading.gif" alt="Carregando..." width="20" />
+          <span v-else>{{ buttonText }}</span>
         </button>
       </div>
     </form>
@@ -56,7 +57,7 @@
 
 <style scoped>
   .widget-search {
-    background-color: #0D2240;
+    background-color: #0d2240;
     box-shadow: 3px 3px 6px #00000059;
     border-radius: 8px;
     width: 480px;
@@ -88,12 +89,18 @@
     font-weight: 600;
   }
 
+  .button-widget-search:disabled, .disabled {
+    opacity: 0.9;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
   .exchange {
     background-image: url('../../../assets/img/icons/up_down_circle.svg');
     background-repeat: no-repeat;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     color: #fff;
     cursor: pointer;
     height: 38px;
@@ -102,7 +109,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     position: absolute;
-    top: 34%;
+    top: 32%;
     left: 87%;
   }
 

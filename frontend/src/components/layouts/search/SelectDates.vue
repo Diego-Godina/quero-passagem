@@ -4,7 +4,8 @@
 
   const props = defineProps<{
     startDate: string,
-    endDate: string
+    endDate: string,
+    isLoading: boolean
   }>()
 
   const emit = defineEmits<{
@@ -25,8 +26,8 @@
 
 <template>
   <div class="d-flex gap-2">
-    <SelectDate id="dt-go" label="Data Saída" v-model:date="startDateProxy"/>
-    <SelectDate id="dt-back" label="Data Retorno" v-model:date="endDateProxy"/>
+    <SelectDate id="dt-go" label="Data Saída" v-model:date="startDateProxy" :isLoading="isLoading"/>
+    <SelectDate id="dt-back" label="Data Retorno" v-model:date="endDateProxy" :isLoading="isLoading"/>
   </div>
 </template>
 

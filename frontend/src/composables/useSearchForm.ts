@@ -33,7 +33,7 @@ export function useSearchForm() {
   }
 
   const isValid = (): boolean => {
-    const datesAreValid = new Date(form.value.dates.start) < new Date(form.value.dates.end)
+    const datesAreValid = form.value.dates.end ? new Date(form.value.dates.start) < new Date(form.value.dates.end) : true
     return !!form.value.origin.id && !!form.value.destiny.id && !!form.value.dates.start && datesAreValid
   }
 

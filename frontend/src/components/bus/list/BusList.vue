@@ -61,7 +61,7 @@
 
 <template>
   <BoxContent>
-    <div class="py-5" v-if="orders.length > 0">
+    <div class="py-5">
       <BreadcrumbWebsite :breadcrumbs="breadcrumbs" />
 
       <h1 class="mt-5 mb-6">{{ title }}</h1>
@@ -77,18 +77,18 @@
       </div>
 
       <div class="pt-4 pb-2">
-        <span class="text"> {{ orders.length }} passagens</span>
+        <span class="text"> {{ filteredOrders.length }} passagens</span>
       </div>
 
-      <div class="block-tickets-options d-flex flex-column gap-3 pb-3">
+      <div v-if="filteredOrders.length > 0" class="block-tickets-options d-flex flex-column gap-3 pb-3">
         <OrderInfo v-for="order in filteredOrders" :key="order.id" :order="order" />
       </div>
 
+      <div v-else class="empty-orders">
+        <h1>Não foi possível encontrar resultados com os filtros selecionados...</h1>
+      </div>
     </div>
 
-    <div v-else class="empty-orders">
-      <h1>Não foi possível encontrar resultados com os filtros selecionados...</h1>
-    </div>
   </BoxContent>
 </template>
 

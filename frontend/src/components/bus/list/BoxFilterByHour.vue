@@ -9,22 +9,18 @@
     active?: boolean
   }>()
 
-  const searchBusTickets = () => {
-    router.push({name: 'list-bus-tickets'})
-  }
-
   const onFilterOrders = ():void => {
     emit('onFilterOrders', props.filterByHour)
   }
 </script>
 
 <template>
-  <form @submit.prevent="searchBusTickets">
+  <div>
     <div class="widget-filter p-2" @click="onFilterOrders" :class="{ 'active': props.active }">
       <button type="submit" class="button-widget-search">{{ props.filterByHour.text }}</button>
       <i class="clean-filter x uil uil-times typo-bold ms-1" v-if="props.active"></i>
     </div>
-  </form>
+  </div>
 </template>
 
 <style scoped>

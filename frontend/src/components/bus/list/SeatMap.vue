@@ -109,7 +109,7 @@
         </div>
       </div>
 
-      <div class="d-flex justify-content-center">
+      <div class="button-payment d-flex justify-content-center">
         <BlueButton title="Ir para pagamento" link="/onibus" />
       </div>
     </div>
@@ -165,5 +165,21 @@
   .seats-selected-text {
     font-weight: 500;
     color: #151618;
+  }
+
+  @media screen and (max-width: 992px) {
+    .box-seats-map {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .box-selected-seats {
+      border: none;
+    }
+
+    .button-payment {
+      margin-top: 8px;
+    }
   }
 </style>

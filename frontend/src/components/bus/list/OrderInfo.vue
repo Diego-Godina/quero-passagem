@@ -155,6 +155,7 @@
     font-size: 1.3rem;
     line-height: 1.4rem;
     font-weight: 700;
+    white-space: nowrap;
   }
 
   .button {

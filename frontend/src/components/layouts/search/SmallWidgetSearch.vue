@@ -8,7 +8,7 @@
 
 <template>
   <form @submit.prevent="submitSearch">
-    <div class="widget-search d-flex justify-content-between is-horizontal">
+    <div class="widget-search d-flex justify-content-between is-horizontal gap-5">
       <div class="d-flex gap-3 justify-content-between">
         <InputSearchDestinies
           id="search_origin"

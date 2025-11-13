@@ -12,6 +12,7 @@
   import ContactNewsletter from '@/components/bus/home/ContactNewsletter.vue'
   import TravelBenefits from '@/components/bus/home/TravelBenefits.vue'
   import ChooseDestinies from '@/components/bus/home/ChooseDestinies.vue'
+  import KnowMore from '@/components/bus/home/KnowMore.vue'
 
 </script>
 
@@ -28,6 +29,8 @@
     <ChooseDestinies/>
 
     <BannerApp/>
+
+    <KnowMore/>
 
     <ContactNewsletter />
 

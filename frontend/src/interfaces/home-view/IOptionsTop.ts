@@ -1,4 +1,4 @@
 export default interface IOptionsTop {
-  'name': string,
-  'link': string
+  name: string
+  link: string
 }

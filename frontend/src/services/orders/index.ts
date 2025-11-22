@@ -4,9 +4,9 @@ import ISearchForm from '@/interfaces/orders/ISearchForm'
 export const getOrders = (form: ISearchForm) => {
   return api.get('/orders', {
     params: {
-      'from': form.origin.id,
-      'to': form.destiny.id,
-      'travelDate': form.dates.start
+      from: form.origin.id,
+      to: form.destiny.id,
+      travelDate: form.dates.start,
     },
   })
 }
@@ -14,8 +14,8 @@ export const getOrders = (form: ISearchForm) => {
 export const getSeats = (orderId: string) => {
   return api.get(`/orders/${orderId}/seats`, {
     params: {
-      'orientation': 'horizontal',
-      'type': 'matrix'
-    }
+      orientation: 'horizontal',
+      type: 'matrix',
+    },
   })
 }

@@ -1,4 +1,4 @@
 export enum SeatsLayouts {
   NUMBERED,
-  QUANTITY
+  QUANTITY,
 }

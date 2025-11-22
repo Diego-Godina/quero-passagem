@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import type IBreadcrumb from '@/interfaces/list-view/IBreadcrumb.ts'
 
-  import type IBreadcrumb from '@/interfaces/list-view/IBreadcrumb.ts'
-
-  const props = defineProps<{
-    breadcrumbs: IBreadcrumb[]
-  }>()
+const props = defineProps<{
+  breadcrumbs: IBreadcrumb[]
+}>()
 </script>
 
 <template>
@@ -17,7 +16,7 @@
       <RouterLink
         :to="breadcrumb.link"
         class="breadcrumb-link"
-        :class="{ 'active': breadcrumb.active}"
+        :class="{ active: breadcrumb.active }"
       >
         {{ breadcrumb.name }}
       </RouterLink>
@@ -28,14 +27,14 @@
 </template>
 
 <style scoped>
-  .breadcrumb-link.active {
-    font-weight: 700;
-    color: #0d2240;
-  }
+.breadcrumb-link.active {
+  font-weight: 700;
+  color: #0d2240;
+}
 
-  .breadcrumb-link {
-    font-size: 1.02rem;
-    line-height: 1.2rem;
-    color: #63656b;
-  }
+.breadcrumb-link {
+  font-size: 1.02rem;
+  line-height: 1.2rem;
+  color: #63656b;
+}
 </style>

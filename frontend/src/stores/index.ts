@@ -19,7 +19,7 @@ export const store = createStore<State>({
     stop,
     notification,
     order,
-    company
+    company,
   },
 })
 

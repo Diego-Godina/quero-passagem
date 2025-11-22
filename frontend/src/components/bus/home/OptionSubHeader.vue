@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import type IOptionsSubHeaderBusTickets from '@/interfaces/home-view/IOptionsSubHeaderBusTickets.ts'
+import type IOptionsSubHeaderBusTickets from '@/interfaces/home-view/IOptionsSubHeaderBusTickets.ts'
 
-  const props = defineProps<{
-    option: IOptionsSubHeaderBusTickets
-  }>()
+const props = defineProps<{
+  option: IOptionsSubHeaderBusTickets
+}>()
 </script>
 
 <template>
@@ -17,24 +17,24 @@
 </template>
 
 <style scoped>
-  .option-title {
-    font-size: 1rem;
-    line-height: 1rem;
-    font-weight: 600;
-    text-align: left;
-    color: #151618;
-  }
+.option-title {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 600;
+  text-align: left;
+  color: #151618;
+}
 
-  .option-info {
-    font-weight: 400;
-    font-size: 0.9rem;
-    line-height: 1rem;
-    text-align: left;
-    color: #151618;
-  }
+.option-info {
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  text-align: left;
+  color: #151618;
+}
 
-  i {
-    font-size: 2.3rem;
-    color: #81848C;
-  }
+i {
+  font-size: 2.3rem;
+  color: #81848c;
+}
 </style>

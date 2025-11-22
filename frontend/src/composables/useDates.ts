@@ -1,7 +1,7 @@
 export function useDates() {
   const timeToSeconds = (time?: string | null): number => {
     if (!time) return NaN
-    const parts = time.split(':').map(p => parseInt(p, 10))
+    const parts = time.split(':').map((p) => parseInt(p, 10))
     if (parts.length < 2 || parts.some(isNaN)) return NaN
     const hours = parts[0] ?? 0
     const minutes = parts[1] ?? 0
@@ -16,6 +16,6 @@ export function useDates() {
 
   return {
     timeToSeconds,
-    isInRangeSameDay
+    isInRangeSameDay,
   }
 }

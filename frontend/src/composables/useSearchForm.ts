@@ -18,7 +18,7 @@ export function useSearchForm() {
     const newForm = {
       ...form.value,
       origin: form.value.destiny,
-      destiny: form.value.origin
+      destiny: form.value.origin,
     }
 
     store.commit(DEFINE_FORM, JSON.parse(JSON.stringify(newForm)))
@@ -28,13 +28,17 @@ export function useSearchForm() {
     store.commit(DEFINE_FORM, {
       origin: { name: '', id: '' },
       destiny: { name: '', id: '' },
-      dates: { start: '', end: '' }
+      dates: { start: '', end: '' },
     })
   }
 
   const isValid = (): boolean => {
-    const datesAreValid = form.value.dates.end ? new Date(form.value.dates.start) < new Date(form.value.dates.end) : true
-    return !!form.value.origin.id && !!form.value.destiny.id && !!form.value.dates.start && datesAreValid
+    const datesAreValid = form.value.dates.end
+      ? new Date(form.value.dates.start) < new Date(form.value.dates.end)
+      : true
+    return (
+      !!form.value.origin.id && !!form.value.destiny.id && !!form.value.dates.start && datesAreValid
+    )
   }
 
   const submitSearch = async () => {
@@ -65,6 +69,6 @@ export function useSearchForm() {
     switchDestinies,
     resetForm,
     submitSearch,
-    isLoading
+    isLoading,
   }
 }

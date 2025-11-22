@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import NavBar from '@/components/layouts/navigation/NavBar.vue'
 import AboveFooter from '@/components/layouts/footer/AboveFooter.vue'
 import FooterPage from '@/components/layouts/footer/FooterPage.vue'
@@ -13,25 +12,25 @@ import GeneralInfo from '@/components/bus/list/GeneralInfo.vue'
 <template>
   <NavBar></NavBar>
 
-  <SmallHeaderSearch/>
+  <SmallHeaderSearch />
 
   <div class="bg-gray">
-    <BusList/>
+    <BusList />
 
-    <GeneralInfo/>
+    <GeneralInfo />
   </div>
 
-  <TopDestinies/>
+  <TopDestinies />
 
-  <AboveFooter/>
+  <AboveFooter />
 
-  <FooterPage/>
+  <FooterPage />
 
-  <FooterCopyright/>
+  <FooterCopyright />
 </template>
 
 <style scoped>
-  .bg-gray {
-    background-color: #f5f5f7;
-  }
+.bg-gray {
+  background-color: #f5f5f7;
+}
 </style>

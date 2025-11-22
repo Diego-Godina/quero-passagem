@@ -15,5 +15,5 @@ export const BREADCRUMBS: IBreadcrumb[] = [
     name: 'Pagamento',
     link: '/',
     active: false,
-  }
+  },
 ]

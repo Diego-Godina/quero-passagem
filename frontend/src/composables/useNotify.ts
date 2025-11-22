@@ -9,11 +9,11 @@ export function useNotify() {
     store.commit(NOTIFY, {
       title: title,
       text: text,
-      type: type
+      type: type,
     })
   }
 
   return {
-    notify
+    notify,
   }
 }

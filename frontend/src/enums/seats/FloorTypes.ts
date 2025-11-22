@@ -1,4 +1,4 @@
 export enum FloorTypes {
   VERTICAL,
-  HORIZONTAL
+  HORIZONTAL,
 }

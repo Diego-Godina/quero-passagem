@@ -1,33 +1,37 @@
 <script setup lang="ts">
-  import { ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 
-  const props = defineProps<{
-    id: string
-    label: string
-    date: string
-    isLoading: boolean
-  }>()
+const props = defineProps<{
+  id: string
+  label: string
+  date: string
+  isLoading: boolean
+}>()
 
-  const emit = defineEmits<{
-    (e: 'update:date', value: string): void
-  }>()
+const emit = defineEmits<{
+  (e: 'update:date', value: string): void
+}>()
 
-  const selectedDate = ref<Date | null>(null)
+const selectedDate = ref<Date | null>(null)
 
-  const formatDateToString = (date: Date | null): string => {
-    if (!date) return ''
-    return date.toISOString().split('T')[0]
-  }
+const formatDateToString = (date: Date | null): string => {
+  if (!date) return ''
+  return date.toISOString().split('T')[0]
+}
 
-  watch(selectedDate, (newDate) => {
-    emit('update:date', formatDateToString(newDate))
-  })
+watch(selectedDate, (newDate) => {
+  emit('update:date', formatDateToString(newDate))
+})
 
-  watch(() => props.date, (newDate) => {
+watch(
+  () => props.date,
+  (newDate) => {
     if (newDate) {
       selectedDate.value = new Date(newDate)
     }
-  }, { immediate: true })
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
@@ -51,7 +55,7 @@
             :disabled="isLoading"
           />
           <span class="icon is-small is-left">
-            <img src="@/assets/img/icons/icon_calendar_outline.svg" alt="data" width="15">
+            <img src="@/assets/img/icons/icon_calendar_outline.svg" alt="data" width="15" />
           </span>
         </template>
       </VDatePicker>
@@ -60,7 +64,7 @@
 </template>
 
 <style scoped>
-  .input {
-    cursor: pointer;
-  }
+.input {
+  cursor: pointer;
+}
 </style>

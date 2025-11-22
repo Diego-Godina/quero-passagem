@@ -39,53 +39,53 @@ const cards = CARDS_TRAVEL_BENEFITS as ICardTravelBenefits[]
 </template>
 
 <style scoped>
+.card-travel-benefits {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #0d2240;
+  font-family: Sora, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+
+.header-travel-benefits {
+  padding: 0 100px;
+}
+
+.text-travel-benefits {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.py-7 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.text-card {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.img-card {
+  height: 236px;
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+
   .card-travel-benefits {
-    border-radius: 10px;
-    background: #FFF;
-    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+    width: 260px;
   }
-
-  h2 {
-    color: #0D2240;
-    font-family: Sora, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: normal;
-    text-align: center;
-  }
-
-  .header-travel-benefits {
-    padding: 0 100px;
-  }
-
-  .text-travel-benefits {
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-  }
-
-  .py-7 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
-  .text-card {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    text-align: center;
-  }
-
-  .img-card {
-    height: 236px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .cards {
-      flex-direction: column;
-    }
-
-    .card-travel-benefits {
-      width: 260px;
-    }
-  }
+}
 </style>

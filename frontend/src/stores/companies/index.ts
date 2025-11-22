@@ -14,7 +14,7 @@ export const company: Module<StateCompanies, Any> = {
   state: (): StateCompanies => ({
     companies: [],
     companyDetails: {},
-    companyLoaded: false
+    companyLoaded: false,
   }),
 
   mutations: {
@@ -24,7 +24,7 @@ export const company: Module<StateCompanies, Any> = {
 
     [DEFINE_COMPANY_DETAILS](state, company: IBusCompanyDetails) {
       state.companyDetails[company.id] = company
-    }
+    },
   },
 
   actions: {
@@ -52,6 +52,6 @@ export const company: Module<StateCompanies, Any> = {
       } catch (error) {
         console.error('Erro ao buscar detalhes das companhias: ', error)
       }
-    }
-  }
+    },
+  },
 }

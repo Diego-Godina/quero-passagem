@@ -1,20 +1,18 @@
 <script setup lang="ts">
+import { useStore } from '@/stores'
+import { NotificationType } from '@/interfaces/INotification'
+import { computed } from 'vue'
 
-  import { useStore } from '@/stores'
-  import { NotificationType } from '@/interfaces/INotification'
-  import { computed } from 'vue'
+const store = useStore()
+const notifications = computed(() => {
+  return store.state.notification.notifications || []
+})
 
-  const store = useStore()
-  const notifications = computed(() => {
-    return store.state.notification.notifications || []
-  })
-
-  const context = {
-    [NotificationType.SUCESSO]: 'is-success',
-    [NotificationType.ATENCAO]: 'is-warning',
-    [NotificationType.FALHA]: 'is-danger',
-  }
-
+const context = {
+  [NotificationType.SUCESSO]: 'is-success',
+  [NotificationType.ATENCAO]: 'is-warning',
+  [NotificationType.FALHA]: 'is-danger',
+}
 </script>
 
 <template>
@@ -25,17 +23,17 @@
       :class="context[notification.type]"
       class="message"
     >
-      <div class="message-header"> {{ notification.title }} </div>
-      <div class="message-body"> {{ notification.text }} </div>
+      <div class="message-header">{{ notification.title }}</div>
+      <div class="message-body">{{ notification.text }}</div>
     </article>
   </div>
 </template>
 
 <style scoped>
-  .notifications {
-    position: absolute;
-    right: 0;
-    width: 300px;
-    padding: 8px;
-  }
+.notifications {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  padding: 8px;
+}
 </style>

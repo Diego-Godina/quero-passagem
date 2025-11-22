@@ -1,43 +1,41 @@
 <script setup lang="ts">
-  import BlueButton from '@/components/buttons/BlueButton.vue'
-  import BusSeat from '@/components/bus/list/BusSeat.vue'
-  import { computed, ref } from 'vue'
-  import type ISeats from '@/interfaces/seats/ISeats.ts'
-  import { SeatsAvailability } from '@/enums/seats/SeatsAvailability.ts'
-  import type ISeat from '@/interfaces/seats/ISeat.ts'
-  import { SeatsType } from '@/enums/seats/SeatsType.ts'
-  import { useStore } from "@/stores";
+import BlueButton from '@/components/buttons/BlueButton.vue'
+import BusSeat from '@/components/bus/list/BusSeat.vue'
+import { computed, ref } from 'vue'
+import type ISeats from '@/interfaces/seats/ISeats.ts'
+import { SeatsAvailability } from '@/enums/seats/SeatsAvailability.ts'
+import type ISeat from '@/interfaces/seats/ISeat.ts'
+import { SeatsType } from '@/enums/seats/SeatsType.ts'
+import { useStore } from '@/stores'
 
-  const selectedSeats = ref<ISeat[]>([])
-  const store = useStore()
+const selectedSeats = ref<ISeat[]>([])
+const store = useStore()
 
-  const props = defineProps<{
-    orderId: string,
-  }>()
+const props = defineProps<{
+  orderId: string
+}>()
 
-  const getAvailabilitySeat = (occupied: boolean | undefined): string => {
-    if (occupied) return SeatsAvailability.OCCUPIED
+const getAvailabilitySeat = (occupied: boolean | undefined): string => {
+  if (occupied) return SeatsAvailability.OCCUPIED
 
-    return SeatsAvailability.AVAILABLE
+  return SeatsAvailability.AVAILABLE
+}
+
+const seats = computed<ISeats>(() => {
+  return store.state.order.seats[props.orderId]
+})
+
+const onSelectedSeat = (seat: ISeat): void => {
+  if (seat.type !== SeatsType.SEAT) return
+
+  if (selectedSeats.value.some((s) => s.seat === seat.seat)) {
+    selectedSeats.value = selectedSeats.value.filter((s) => s.seat !== seat.seat)
+  } else {
+    selectedSeats.value.push(seat)
   }
 
-  const seats = computed<ISeats>(() => {
-    return store.state.order.seats[props.orderId]
-  })
-
-  const onSelectedSeat = (seat: ISeat): void => {
-    if (seat.type !== SeatsType.SEAT) return
-
-    if (selectedSeats.value.some(s => s.seat === seat.seat)) {
-      selectedSeats.value = selectedSeats.value.filter(s => s.seat !== seat.seat)
-    } else {
-      selectedSeats.value.push(seat)
-    }
-
-    selectedSeats.value.sort((a, b) => Number(a.seat) - Number(b.seat))
-  }
-
-
+  selectedSeats.value.sort((a, b) => Number(a.seat) - Number(b.seat))
+}
 </script>
 
 <template>
@@ -72,7 +70,7 @@
                 :showNumber="true"
                 :seat="seat"
                 @selectedSeat="onSelectedSeat"
-                :selected="selectedSeats.some(s => s.seat === seat.seat)"
+                :selected="selectedSeats.some((s) => s.seat === seat.seat)"
                 v-if="seat.type === SeatsType.SEAT"
               />
             </div>
@@ -94,10 +92,7 @@
         </div>
 
         <div class="selected-seats d-flex flex-wrap gap-3">
-          <div
-            v-for="(selectedSeat, i) in selectedSeats"
-            :key="i"
-          >
+          <div v-for="(selectedSeat, i) in selectedSeats" :key="i">
             <BusSeat
               :type="SeatsAvailability.AVAILABLE"
               :number="selectedSeat.seat"
@@ -117,69 +112,69 @@
 </template>
 
 <style scoped>
-  .seat {
-    transform: rotateX(180deg);
-  }
+.seat {
+  transform: rotateX(180deg);
+}
 
-  .bus-layout {
-    display: grid;
-    grid-template-columns: repeat(16, 24px);
-    grid-template-rows: repeat(5, 1fr);
-    height: 100%;
-    width: fit-content;
-    transform: rotateX(180deg);
-  }
+.bus-layout {
+  display: grid;
+  grid-template-columns: repeat(16, 24px);
+  grid-template-rows: repeat(5, 1fr);
+  height: 100%;
+  width: fit-content;
+  transform: rotateX(180deg);
+}
 
-  .driver {
-    width: 32px;
-    padding-bottom: 1.7rem;
-  }
+.driver {
+  width: 32px;
+  padding-bottom: 1.7rem;
+}
 
-  .bus {
-    border-radius: 56px 24px 24px 56px;
-    height: 200px;
-    overflow: hidden;
-    transition: 0.5s;
-    border: 1px solid #d5d8de;
+.bus {
+  border-radius: 56px 24px 24px 56px;
+  height: 200px;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 1px solid #d5d8de;
+}
+
+.box-selected-seats {
+  max-width: 200px;
+  border-left: 1px solid #d5d8de;
+  padding-right: 1.5rem;
+  padding-bottom: 1.8rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+.box-seats-map {
+  border-top: 1px solid #d5d8de;
+  margin-left: -1rem;
+  margin-right: -1.5rem;
+}
+
+.info-seats-map {
+  margin: 0 auto;
+}
+
+.seats-selected-text {
+  font-weight: 500;
+  color: #151618;
+}
+
+@media screen and (max-width: 992px) {
+  .box-seats-map {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
 
   .box-selected-seats {
-    max-width: 200px;
-    border-left: 1px solid #d5d8de;
-    padding-right: 1.5rem;
-    padding-bottom: 1.8rem;
-    margin-top: -1rem;
-    margin-bottom: -1rem;
+    border: none;
   }
 
-  .box-seats-map {
-    border-top: 1px solid #d5d8de;
-    margin-left: -1rem;
-    margin-right: -1.5rem;
+  .button-payment {
+    margin-top: 8px;
   }
-
-  .info-seats-map {
-    margin: 0 auto;
-  }
-
-  .seats-selected-text {
-    font-weight: 500;
-    color: #151618;
-  }
-
-  @media screen and (max-width: 992px) {
-    .box-seats-map {
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .box-selected-seats {
-      border: none;
-    }
-
-    .button-payment {
-      margin-top: 8px;
-    }
-  }
+}
 </style>

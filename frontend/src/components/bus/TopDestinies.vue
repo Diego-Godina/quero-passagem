@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import type ITopDestinies from '@/interfaces/home-view/ITopDestinies.ts'
-  import BoxContent from '@/components/layouts/BoxContent.vue'
-  import { TOP_DESTINIES } from '@/constants/topDestinies'
+import type ITopDestinies from '@/interfaces/home-view/ITopDestinies.ts'
+import BoxContent from '@/components/layouts/BoxContent.vue'
+import { TOP_DESTINIES } from '@/constants/topDestinies'
 
-  const topDestinies = TOP_DESTINIES as ITopDestinies[]
+const topDestinies = TOP_DESTINIES as ITopDestinies[]
 </script>
 
 <template>
@@ -22,10 +22,7 @@
               :key="option.name"
               :class="{ 'is-last': index === topDestiny.options.length - 1 }"
             >
-              <RouterLink
-                class="link-top-destiny"
-                :to="option.link"
-              >
+              <RouterLink class="link-top-destiny" :to="option.link">
                 {{ option.name }}
               </RouterLink>
             </div>
@@ -37,27 +34,27 @@
 </template>
 
 <style scoped>
-  .box-top-destinies {
-    background-color: #0d2240;
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
+.box-top-destinies {
+  background-color: #0d2240;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 
-  .is-last {
-    font-weight: 600;
-  }
+.is-last {
+  font-weight: 600;
+}
 
-  .link-top-destiny {
-    color: #fff;
-    font-size: 1.1rem;
-    line-height: 1.4rem;
-  }
+.link-top-destiny {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+}
 
-  .title-top-destiny {
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 1.3rem;
-    text-transform: uppercase;
-  }
+.title-top-destiny {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3rem;
+  text-transform: uppercase;
+}
 </style>

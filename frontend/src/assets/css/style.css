@@ -1,40 +1,40 @@
 .icon-link {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .title-link {
-    color: #0d2240;
-    font-family: 'Sora', sans-serif;
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 15px;
-    margin: 0 0 0 8px;
+  color: #0d2240;
+  font-family: 'Sora', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 15px;
+  margin: 0 0 0 8px;
 }
 
 h3 {
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    color: #0D2240;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  color: #0d2240;
 }
 
 .is-horizontal .field {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .info-gray {
-    font-size: 0.9rem;
-    line-height: 1rem;
-    color: #2d2e30;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: #2d2e30;
 }
 
 .box-selected-seats .selected-seats .seat {
-    font-size: 0.9rem;
-    font-weight: 700;
-    border: 1px solid #0d2240;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid #0d2240;
 }
 
 .info-seats-map .options-seat-map .seat {
-    width: 18px;
-    height: 18px;
+  width: 18px;
+  height: 18px;
 }

@@ -6,13 +6,13 @@ const routes = [
   {
     path: '/',
     name: 'home-tickets',
-    component: HomeBusTickets
+    component: HomeBusTickets,
   },
   {
     path: '/onibus',
     name: 'list-bus-tickets',
-    component: ListBusTickets
-  }
+    component: ListBusTickets,
+  },
 ]
 
 const router = createRouter({

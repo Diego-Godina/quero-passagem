@@ -12,8 +12,8 @@ export interface StateStops {
 export const stop: Module<StateStops, Any> = {
   state: (): StateStops => ({
     stop: {
-      stops: []
-    }
+      stops: [],
+    },
   }),
 
   mutations: {

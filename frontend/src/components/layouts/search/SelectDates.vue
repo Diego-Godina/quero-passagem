@@ -1,33 +1,43 @@
 <script setup lang="ts">
-  import SelectDate from '@/components/layouts/search/SelectDate.vue'
-  import { computed } from 'vue'
+import SelectDate from '@/components/layouts/search/SelectDate.vue'
+import { computed } from 'vue'
 
-  const props = defineProps<{
-    startDate: string,
-    endDate: string,
-    isLoading: boolean
-  }>()
+const props = defineProps<{
+  startDate: string
+  endDate: string
+  isLoading: boolean
+}>()
 
-  const emit = defineEmits<{
-    (e: 'update:startDate', value: string): void
-    (e: 'update:endDate', value: string): void
-  }>()
+const emit = defineEmits<{
+  (e: 'update:startDate', value: string): void
+  (e: 'update:endDate', value: string): void
+}>()
 
-  const startDateProxy = computed({
-    get: () => props.startDate,
-    set: (val: string) => emit('update:startDate', val)
-  })
+const startDateProxy = computed({
+  get: () => props.startDate,
+  set: (val: string) => emit('update:startDate', val),
+})
 
-  const endDateProxy = computed({
-    get: () => props.endDate,
-    set: (val: string) => emit('update:endDate', val)
-  })
+const endDateProxy = computed({
+  get: () => props.endDate,
+  set: (val: string) => emit('update:endDate', val),
+})
 </script>
 
 <template>
   <div class="d-flex gap-2">
-    <SelectDate id="dt-go" label="Data Saída" v-model:date="startDateProxy" :isLoading="isLoading"/>
-    <SelectDate id="dt-back" label="Data Retorno" v-model:date="endDateProxy" :isLoading="isLoading"/>
+    <SelectDate
+      id="dt-go"
+      label="Data Saída"
+      v-model:date="startDateProxy"
+      :isLoading="isLoading"
+    />
+    <SelectDate
+      id="dt-back"
+      label="Data Retorno"
+      v-model:date="endDateProxy"
+      :isLoading="isLoading"
+    />
   </div>
 </template>
 

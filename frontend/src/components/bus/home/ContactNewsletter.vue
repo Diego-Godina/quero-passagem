@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import BlueButton from '@/components/buttons/BlueButton.vue'
+import BlueButton from '@/components/buttons/BlueButton.vue'
 </script>
 
 <template>
@@ -51,7 +51,7 @@
         </div>
 
         <div>
-          <BlueButton title="Inscreva-se" link="/"/>
+          <BlueButton title="Inscreva-se" link="/" />
         </div>
       </div>
     </div>
@@ -59,20 +59,20 @@
 </template>
 
 <style scoped>
-  .form {
-    padding: 70px 0;
-    background: #F8F8F8;
-  }
+.form {
+  padding: 70px 0;
+  background: #f8f8f8;
+}
 
-  h2 {
-    color: #101828;
-    font-family: Sora, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: normal;
-  }
+h2 {
+  color: #101828;
+  font-family: Sora, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: normal;
+}
 
-  .field {
-    margin-bottom: 0 !important;
-  }
+.field {
+  margin-bottom: 0 !important;
+}
 </style>

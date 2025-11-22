@@ -1,4 +1,4 @@
 export enum SeatsType {
   SEAT = 'seat',
-  OTHER = 'emptyOrReservedSpace'
+  OTHER = 'emptyOrReservedSpace',
 }

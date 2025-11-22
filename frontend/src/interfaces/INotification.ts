@@ -5,7 +5,7 @@ export enum NotificationType {
 }
 export interface INotification {
   id: number
-  title: string,
+  title: string
   text: string
-  type: NotificationType,
+  type: NotificationType
 }

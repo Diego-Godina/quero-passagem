@@ -1,5 +1,5 @@
 export default interface IBreadcrumb {
-  name: string,
-  link: string,
+  name: string
+  link: string
   active: boolean
 }

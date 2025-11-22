@@ -1,9 +1,9 @@
 export default interface IDestiniesOptions {
-  name: string,
-  image: string,
+  name: string
+  image: string
   options: {
-    city: string,
-    price: number,
+    city: string
+    price: number
     link: string
   }[]
 }

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  const props = defineProps<{
-    departure: string,
-    arrival: string
-  }>()
+const props = defineProps<{
+  departure: string
+  arrival: string
+}>()
 
-  const getHourAndMinutes = (time: string):string => {
-    return time.slice(0, 5)
-  }
+const getHourAndMinutes = (time: string): string => {
+  return time.slice(0, 5)
+}
 </script>
 
 <template>
@@ -18,11 +18,11 @@
 </template>
 
 <style scoped>
-  .hours-minutes * {
-    font-family: Sora, sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.4rem;
-    font-weight: 600;
-    color: #2d2e30;
-  }
+.hours-minutes * {
+  font-family: Sora, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  color: #2d2e30;
+}
 </style>

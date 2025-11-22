@@ -8,12 +8,12 @@ import ISeats from '@/interfaces/seats/ISeats'
 const initialForm: ISearchForm = {
   origin: { name: '', id: '' },
   destiny: { name: '', id: '' },
-  dates: { start: '', end: '' }
+  dates: { start: '', end: '' },
 }
 
 export interface StateOrders {
-  orders: IOrder[],
-  form: ISearchForm,
+  orders: IOrder[]
+  form: ISearchForm
   seats: ISeats[]
 }
 
@@ -21,7 +21,7 @@ export const order: Module<StateOrders, Any> = {
   state: (): StateOrders => ({
     orders: [],
     form: initialForm,
-    seats: []
+    seats: [],
   }),
 
   mutations: {
@@ -33,12 +33,11 @@ export const order: Module<StateOrders, Any> = {
     },
     [DEFINE_SEATS](state, payload: { seats: ISeats[]; orderId: string }) {
       state.seats[payload.orderId] = payload.seats
-    }
+    },
   },
 
   actions: {
     async [GET_ORDERS]({ commit, dispatch }, form: ISearchForm) {
-
       try {
         const response = await getOrders(form)
         commit(DEFINE_ORDERS, response.data)
@@ -58,6 +57,6 @@ export const order: Module<StateOrders, Any> = {
       } catch (error) {
         console.error('Erro ao buscar assentos', error)
       }
-    }
-  }
+    },
+  },
 }
